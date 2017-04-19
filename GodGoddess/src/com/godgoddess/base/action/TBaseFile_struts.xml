@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        
+	<!--
+	@MapperName com.kingtopinfo.base.action.TBaseFileAction
+	@Description T_BASE_FILE
+	@author 林祥聪  lxcl@kingtopinfo.com
+	@date 2016-10-26 16:19:23
+	@version 1.0
+	@remark create by generator
+	-->
+	<!-- copy struts.xml
+		<include file="/com/kingtopinfo/base/action/TBaseFile_struts.xml"></include>
+	-->
+
+<struts>
+	<constant name="struts.multipart.maxSize" value="104857600" />
+	<package name="tBaseFile" namespace="/tBaseFile" extends="json-default">
+		
+		<action name ="selectByOperatypeAndOperaid" class ="TBaseFileAction" method="selectByOperatypeAndOperaid">
+			<result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="root">rows</param>
+			</result>
+        </action>
+		
+		<action name ="upload" class ="TBaseFileAction" method="upload">
+			<result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+        </action>
+        
+        <action name="downloadByFilePath" class="TBaseFileAction" method="downloadByFilePath">
+			<result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		
+		<action name="selectPagination" class="TBaseFileAction" method="selectPagination">
+			<result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		
+		<action name="selectByPkey" class="TBaseFileAction" method="selectByPkey">
+			<result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="root">e</param>
+			</result>
+		</action>
+		
+		<action name="insert" class="TBaseFileAction" method="insert">
+			<result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="root">row</param>
+			</result>
+		</action>
+		
+		<action name="update" class="TBaseFileAction" method="update">
+			<result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="root">row</param>
+			</result>
+		</action>
+		
+		<action name="deletes" class="TBaseFileAction" method="deletes">
+			<result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="root">row</param>
+			</result>
+		</action>
+		
+		<action name="deleteByOperaids" class="TBaseFileAction" method="deleteByOperaids">
+			<result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="root">row</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>

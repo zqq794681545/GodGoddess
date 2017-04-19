@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.kingtopinfo.base.mapper.TSystemUserMapper
+	@Description T_SYSTEM_USER
+	@author dzb@kingtopinfo.com
+	@date 2016-10-10 09:50:59
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.base.mapper.TSystemUserMapper">
+	
+	<select id="getCount" resultType="int" parameterType="tSystemUserEntity">
+		select 
+			count(*)
+		from 
+			T_SYSTEM_USER
+	</select>
+	
+	<select id="selectPagination" resultType="tSystemUserEntity" parameterType="tSystemUserEntity">
+		select 
+			t.tyshxydm,t.shzz_name,t.shzz_id,t.tel,t.mailkey,t.createtime,t.state,t.mail,t.mobile,t.card,t.contacts,t.password,t.zztype,t.account,t.system_user_id
+		from 
+			T_SYSTEM_USER t
+	</select>
+	
+	<select id="getByPkey" resultType="tSystemUserEntity" parameterType="String">
+		select 
+			t.tyshxydm,t.shzz_name,t.shzz_id,t.tel,t.mailkey,t.createtime,t.state,t.mail,t.mobile,t.card,t.contacts,t.password,t.zztype,t.account,t.system_user_id
+		from 
+			T_SYSTEM_USER t
+		where 
+			system_user_id = #{system_user_id}
+	</select>
+	
+	<insert id="insert" parameterType="tSystemUserEntity">
+		insert into T_SYSTEM_USER(
+			tyshxydm,shzz_name,shzz_id,tel,mailkey,createtime,state,mail,mobile,card,contacts,password,zztype,account,system_user_id
+		)values(
+			#{tyshxydm,jdbcType=VARCHAR},#{shzz_name,jdbcType=VARCHAR},#{shzz_id,jdbcType=VARCHAR},#{tel,jdbcType=VARCHAR},#{mailkey,jdbcType=VARCHAR},#{createtime,jdbcType=TIME},#{state,jdbcType=INTEGER},#{mail,jdbcType=VARCHAR},#{mobile,jdbcType=VARCHAR},#{card,jdbcType=VARCHAR},#{contacts,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{zztype,jdbcType=INTEGER},#{account,jdbcType=VARCHAR},#{system_user_id,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tSystemUserEntity">
+		update T_SYSTEM_USER
+		set 
+			tyshxydm = #{tyshxydm,jdbcType=VARCHAR}, shzz_name = #{shzz_name,jdbcType=VARCHAR}, shzz_id = #{shzz_id,jdbcType=VARCHAR}, tel = #{tel,jdbcType=VARCHAR}, mailkey = #{mailkey,jdbcType=VARCHAR}, createtime = #{createtime,jdbcType=TIME}, state = #{state,jdbcType=INTEGER}, mail = #{mail,jdbcType=VARCHAR}, mobile = #{mobile,jdbcType=VARCHAR}, card = #{card,jdbcType=VARCHAR}, contacts = #{contacts,jdbcType=VARCHAR}, password = #{password,jdbcType=VARCHAR}, zztype = #{zztype,jdbcType=INTEGER}, account = #{account,jdbcType=VARCHAR}
+		where
+			system_user_id = #{system_user_id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from T_SYSTEM_USER where system_user_id = #{system_user_id}
+	</delete>
+	
+</mapper>

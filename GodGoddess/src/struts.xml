@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.ui.theme" value="simple" />
+
+	<constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<!-- base模块 -->
+	<include file="/com/godgoddess/base/action/TBaseType_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseUser_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseMenu_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseRole_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseRoleMenuMapping_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseUserRoleMapping_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseUserlog_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseMenuModuleMapping_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TSystemUser_struts.xml"></include>
+	
+	<include file="/com/godgoddess/base/action/TSystemBillboard_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseDocument_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseFile_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TBaseHolidays_struts.xml"></include>
+
+</struts>

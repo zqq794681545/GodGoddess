@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.kingtopinfo.base.mapper.TSystemBillboardMapper
+	@Description T_SYSTEM_BILLBOARD
+	@author dzb@kingtopinfo.com
+	@date 2016-10-12 10:33:25
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.base.mapper.TSystemBillboardMapper">
+	
+	<select id="getCount" resultType="int" parameterType="tSystemBillboardEntity">
+		select 
+			count(*)
+		from 
+			T_SYSTEM_BILLBOARD
+	</select>
+	
+	<select id="selectPagination" resultType="tSystemBillboardEntity" parameterType="tSystemBillboardEntity">
+		select 
+			t.updateuser,t.updatetime,t.createuser,t.createtime,t.state,t.document_id,t.billboard_time,t.billboard_title,t.system_billboard_id
+		from 
+			T_SYSTEM_BILLBOARD t
+		order by
+		<choose>
+			<when test="sort != null">
+				${sort} ${order}
+			</when>
+			<otherwise>
+				updatetime desc
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="getByPkey" resultType="tSystemBillboardEntity" parameterType="String">
+		select 
+			t.updateuser,t.updatetime,t.createuser,t.createtime,t.state,t.document_id,t.billboard_time,t.billboard_body,t.billboard_title,t.system_billboard_id
+		from 
+			T_SYSTEM_BILLBOARD t
+		where 
+			system_billboard_id = #{system_billboard_id}
+	</select>
+	
+	<insert id="insert" parameterType="tSystemBillboardEntity">
+		insert into T_SYSTEM_BILLBOARD(
+			updateuser,
+			updatetime,
+			createuser,
+			createtime,
+			state,
+			document_id,
+			billboard_time,
+			billboard_body,
+			billboard_title,
+			system_billboard_id
+		)values(
+			#{updateuser,jdbcType=VARCHAR},
+			#{updatetime,jdbcType=TIME},
+			#{createuser,jdbcType=VARCHAR},
+			#{createtime,jdbcType=TIME},
+			#{state,jdbcType=INTEGER},
+			#{document_id,jdbcType=VARCHAR},
+			#{billboard_time,jdbcType=TIME},
+			#{billboard_body,javaType=String,jdbcType=CLOB},
+			#{billboard_title,jdbcType=VARCHAR},
+			#{system_billboard_id,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tSystemBillboardEntity">
+		update T_SYSTEM_BILLBOARD
+		set 
+			updateuser = #{updateuser,jdbcType=VARCHAR}, 
+			updatetime = #{updatetime,jdbcType=TIME}, 
+			state = #{state,jdbcType=INTEGER}, 
+			document_id = #{document_id,jdbcType=VARCHAR}, 
+			billboard_time = #{billboard_time,jdbcType=TIME}, 
+			billboard_body = #{billboard_body,javaType=String,jdbcType=CLOB},
+			billboard_title = #{billboard_title,jdbcType=VARCHAR}
+		where
+			system_billboard_id = #{system_billboard_id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from T_SYSTEM_BILLBOARD where system_billboard_id = #{system_billboard_id}
+	</delete>
+	
+</mapper>

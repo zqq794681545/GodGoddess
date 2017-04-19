@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.kingtopinfo.base.mapper.TBaseUserMapper
+	@Description T_BASE_USER表映射配置文件
+	@author dzb@kingtopinfo.com
+	@date 2014-02-18 09:21:43
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.base.mapper.TBaseUserMapper">
+
+	<select id="select" resultType="tBaseUserEntity">
+		select 
+			id,account,password,username,xzqh,state,updatetime 
+		from 
+			T_BASE_USER
+	</select>
+	
+	<select id="selectUserNameByKey" resultType="String" parameterType="String">
+		select 
+			username
+		from 
+			T_BASE_USER 
+		where 
+			id = #{id}
+	</select>
+	
+	<select id="selectUserByGid" resultType="tBaseUserEntity" parameterType="String">
+		select 
+			*
+		from 
+			T_BASE_USER
+		where
+			gid = #{gid}
+	</select>
+	
+	<select id="selectPagination" resultType="tBaseUserEntity" parameterType="tBaseUserEntity">
+		select
+			*
+		from
+			T_BASE_USER
+		<where>
+			<if test="account != null and account != '' ">
+				account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and username like '%'||#{username,jdbcType=VARCHAR}||'%'
+			</if>
+		</where>
+    </select>
+    
+    <select id="getCount"  resultType="Integer"  parameterType="tBaseUserEntity">
+		select 
+			count(*) 
+		from 
+			T_BASE_USER
+		<where>
+			<if test="account  != null and account != '' ">
+				account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and username like '%'||#{username,jdbcType=VARCHAR}||'%'
+            </if>
+		</where>
+    </select>
+	
+	<select id="selectByKey" resultType="tBaseUserEntity" parameterType="String">
+		select 
+			id,account,password,username,xzqh,state,updatetime 
+		from 
+			T_BASE_USER 
+		where 
+			id = #{id}
+	</select>
+	
+	<select id="selectByAccount" resultType="tBaseUserEntity" parameterType="String">
+		select 
+			id,account,password,username,xzqh,state,updatetime 
+		from 
+			T_BASE_USER 
+		where 
+			account = #{account}
+			and state = 1
+	</select>
+	<select id="selectByAccountnum" resultType="int" parameterType="String">
+		select 
+			count(*)
+		from 
+			T_BASE_USER 
+		where 
+			account = #{account}
+	</select>
+	
+	<insert id="insert" parameterType="tBaseUserEntity">
+		insert into T_BASE_USER(
+			id,
+			account,
+			password,
+			username,
+			xzqh,
+			state,
+			updatetime
+		)values(
+			#{id, jdbcType=VARCHAR},
+			#{account, jdbcType=VARCHAR},
+			#{password, jdbcType=VARCHAR},
+			#{username, jdbcType=VARCHAR},
+			#{xzqh, jdbcType=VARCHAR},
+			#{state, jdbcType=INTEGER},
+			#{updatetime, jdbcType=TIME}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tBaseUserEntity">
+		update T_BASE_USER
+		set
+			account = #{account, jdbcType=VARCHAR},
+			username = #{username, jdbcType=VARCHAR},
+			state = #{state, jdbcType=INTEGER},
+			updatetime = #{updatetime, jdbcType=TIME},
+			xzqh = #{xzqh, jdbcType=TIME}
+		where 
+			id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete FROM T_BASE_USER where id = #{id}
+	</delete>
+	
+	<!-- 以上为代码生成器自动生成 -->
+    
+    <update id="updatePassword" parameterType="tBaseUserEntity">
+		update T_BASE_USER
+		set 
+			password = #{password, jdbcType=VARCHAR}
+		where 
+			id = #{id}
+	</update>
+    
+	<select id="selectUnauthorizedPagination" resultType="tBaseUserEntity" parameterType="tBaseUserEntity">
+		select
+			t.*
+		from
+			T_BASE_USER t
+		where
+			t.id not in (select  m.userid from T_BASE_USER_ROLE_MAPPING m where m.roleid = #{roleid,jdbcType=VARCHAR})
+			<if test="account != null and account != '' ">
+				and t.account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and t.username like '%'||#{username,jdbcType=VARCHAR}||'%'
+			</if>
+    </select>
+    
+    <select id="getUnauthorizedCount"  resultType="Integer"  parameterType="tBaseUserEntity">
+    	select 
+			count(*) 
+		from 
+			T_BASE_USER t
+		where
+			t.id not in (select  m.userid from T_BASE_USER_ROLE_MAPPING m where m.roleid = #{roleid,jdbcType=VARCHAR})
+			<if test="account  != null and account != '' ">
+				and t.account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and t.username like '%'||#{username,jdbcType=VARCHAR}||'%'
+            </if>
+    </select>
+    
+    <select id="selectAuthorizedPagination" resultType="tBaseUserEntity" parameterType="tBaseUserEntity">
+    	select
+			t.*
+		from
+			T_BASE_USER t
+		where
+			t.id in (select  m.userid from T_BASE_USER_ROLE_MAPPING m where m.roleid = #{roleid,jdbcType=VARCHAR})
+			<if test="account  != null and account != '' ">
+				and t.account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and t.username like '%'||#{username,jdbcType=VARCHAR}||'%'
+            </if>
+    </select>
+    
+    <select id="getAuthorizedCount"  resultType="Integer"  parameterType="tBaseUserEntity">
+            select 
+			count(*) 
+		from 
+			T_BASE_USER t
+		where
+			t.id in (select  m.userid from T_BASE_USER_ROLE_MAPPING m where m.roleid = #{roleid,jdbcType=VARCHAR})
+			<if test="account  != null and account != '' ">
+				and t.account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and t.username like '%'||#{username,jdbcType=VARCHAR}||'%'
+            </if>
+    </select>
+    
+    
+    <select id="selectPasswordByAccount" resultType="String" parameterType="String">
+		select 
+			password
+		from 
+			T_BASE_USER 
+		where 
+			account = #{account} 
+	</select>
+	
+	<select id="selectXzqhByAccount" resultType="String" parameterType="String">
+		select 
+			xzqh
+		from 
+			T_BASE_USER 
+		where 
+			account = #{account} 
+	</select>
+	
+	<select id="selectRoleIdByAccount" resultType="String" parameterType="String">
+		select 
+			m.roleid
+  		from 
+  			T_BASE_USER t, 
+  			T_BASE_USER_ROLE_MAPPING m
+ 		where 
+ 			t.id = m.userid
+ 			and t.account = #{account}
+	</select>
+	
+	<select id="verifyUserInfo" resultType="Integer" parameterType="tBaseUserEntity">
+		select
+			count(*)
+		from
+			T_BASE_USER
+		where
+			account = #{account} 
+			and password = #{password}
+			and state = 1
+	</select>
+	
+	<select id="selectUnaddGroupUserPagination" resultType="tBaseUserEntity" parameterType="tBaseUserEntity">
+		select
+			t.*
+		from
+			T_BASE_USER t
+		where
+			t.gid is null
+			<if test="account != null and account != '' ">
+				and t.account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and t.username like '%'||#{username,jdbcType=VARCHAR}||'%'
+			</if>
+    </select>
+    
+    <select id="getUnaddGroupUserCount"  resultType="Integer"  parameterType="tBaseUserEntity">
+    	select 
+			count(*) 
+		from 
+			T_BASE_USER t
+		where
+			t.gid is null
+			<if test="account  != null and account != '' ">
+				and t.account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and t.username like '%'||#{username,jdbcType=VARCHAR}||'%'
+            </if>
+    </select>
+    
+    <select id="selectAddGroupUserPagination" resultType="tBaseUserEntity" parameterType="tBaseUserEntity">
+		select
+			t.*
+		from
+			T_BASE_USER t
+		where
+			t.gid = #{gid}
+			<if test="account != null and account != '' ">
+				and t.account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and t.username like '%'||#{username,jdbcType=VARCHAR}||'%'
+			</if>
+    </select>
+    
+    <select id="getAddGroupUserCount"  resultType="Integer"  parameterType="tBaseUserEntity">
+    	select 
+			count(*) 
+		from 
+			T_BASE_USER t
+		where
+			t.gid = #{gid}
+			<if test="account  != null and account != '' ">
+				and t.account like '%'||#{account,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="username != null and username !='' ">
+				and t.username like '%'||#{username,jdbcType=VARCHAR}||'%'
+            </if>
+    </select>
+    
+    <update id="AddGroupByGid" parameterType="tBaseUserEntity">
+    	update 
+			T_BASE_USER t
+		set
+			t.gid = #{gid}
+		where
+			t.id = #{id}
+    </update>
+    
+    <update id="DropGroupByGid" parameterType="String">
+    	update 
+			T_BASE_USER t
+		set
+			t.gid = ''
+		where
+			t.id = #{id}
+    </update>
+</mapper>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.kingtopinfo.base.mapper.TBaseHelpMapper
+	@Description T_BASE_HELP表映射配置文件
+	@author dzb@kingtopinfo.com
+	@date 2014-02-20 09:12:37
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.base.mapper.TBaseHelpMapper">
+	
+	<select id="select" resultType="tBaseHelpEntity">
+		select 
+			id,name,url,pid,state,updatetime,sequ 
+		from 
+			T_BASE_HELP
+		order by sequ ASC	
+	</select>
+	
+	<select id="selectByRole" resultType="tBaseHelpEntity" parameterType="String">
+		select 
+			id,name,url,pid,state,updatetime,sequ 
+		from 
+			T_BASE_HELP
+		where
+			id in (select menuid from T_HELP_ROLE_MAPPING where roleid in 
+			<foreach collection="list" item="roleid" index="index" open="(" close=")" separator=",">
+		      #{roleid}
+			</foreach>
+			)
+		order by sequ ASC		
+	</select>
+	
+	<select id="selectByPid" resultType="tBaseHelpEntity" parameterType="String">
+        select 
+            id,name,url,pid,state,updatetime,sequ 
+        from 
+            T_BASE_HELP
+        where 
+            pid = #{pid}  
+        order by sequ ASC      
+    </select>
+	
+	<select id="selectIdByName" resultType="String" parameterType="String">
+		select 
+			id
+		from 
+			T_BASE_HELP 
+		where 
+			name like '%'||#{name,jdbcType=VARCHAR}||'%'
+	</select>
+	
+	<select id="selectUrlByName" resultType="String" parameterType="String">
+		select 
+			url
+		from 
+			T_BASE_HELP 
+		where 
+			name = #{name,jdbcType=VARCHAR}
+	</select>
+	
+	<insert id="insert" parameterType="tBaseHelpEntity">
+		insert into T_BASE_HELP(
+			id,
+			pid,
+			name,
+			url,
+			state,
+			updatetime,
+			sequ
+		)values(
+			#{id,jdbcType=VARCHAR},
+			#{pid,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{url,jdbcType=VARCHAR},
+			#{state,jdbcType=INTEGER},
+			#{updatetime,jdbcType=TIME},
+			#{sequ,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tBaseHelpEntity">
+		update T_BASE_HELP
+		set 
+			name = #{name,jdbcType=VARCHAR}, 
+			url = #{url,jdbcType=VARCHAR}, 
+			state = #{state,jdbcType=INTEGER}, 
+			updatetime = #{updatetime,jdbcType=TIME}
+		where 
+			id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete FROM T_BASE_HELP where id = #{id,jdbcType=VARCHAR} 
+	</delete>
+	
+	<select id="selectMaxSequ" resultType="Integer">
+		select 
+			max(sequ)
+		from 
+			T_BASE_HELP 
+	</select>
+	
+	<update id="updateSequ" parameterType="tBaseHelpEntity">
+		update T_BASE_HELP
+		set 
+			sequ = #{sequ,jdbcType=INTEGER}
+		where 
+			id = #{id}
+	</update>
+	
+</mapper>

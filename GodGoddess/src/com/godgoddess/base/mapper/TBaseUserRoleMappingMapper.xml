@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.kingtopinfo.base.mapper.TBaseUserRoleMappingMapper
+	@Description T_BASE_USER_ROLE_MAPPING表映射配置文件
+	@author dzb@kingtopinfo.com
+	@date 2014-02-18 09:21:47
+	@version 1.0
+	@remark create by generator
+	-->
+	<!-- 剪切至  mybatis-config.xml
+	
+	-->
+	
+<mapper namespace="com.godgoddess.base.mapper.TBaseUserRoleMappingMapper">
+
+
+    
+    <insert id="insert" parameterType="tBaseUserRoleMappingEntity">
+        insert into T_BASE_USER_ROLE_MAPPING(
+            id,userid,roleid,updatetime
+        )values(
+                #{id, jdbcType=VARCHAR},#{userid, jdbcType=VARCHAR},#{roleid, jdbcType=VARCHAR},#{updatetime, jdbcType=TIME}
+       )
+    </insert>
+
+    <!-- 
+	<insert id="insert" parameterType="tBaseUserRoleMappingEntity">
+		insert into T_BASE_USER_ROLE_MAPPING(
+			id,userid,roleid,updatetime
+		)values
+		<foreach collection="tBaseUserRoleMappingEntitys" item="item" index="index" separator="union all" >
+		      (
+                #{item.id, jdbcType=VARCHAR},#{item.userid, jdbcType=VARCHAR},#{item.roleid, jdbcType=VARCHAR},#{item.updatetime, jdbcType=TIME}
+	          )
+	          </foreach>
+	</insert>
+    -->
+	<delete id="deleteByRoidAndUserid" parameterType="tBaseUserRoleMappingEntity">
+		delete FROM T_BASE_USER_ROLE_MAPPING where userid =  #{userid, jdbcType=VARCHAR} and roleid = #{roleid, jdbcType=VARCHAR}
+	</delete>
+	
+	<!-- 以上为代码生成器自动生成 -->
+	
+	<delete id="deleteByUserid" parameterType="String">
+		delete FROM T_BASE_USER_ROLE_MAPPING where userid = #{userid, jdbcType=VARCHAR}
+	</delete>
+	
+	<delete id="deleteByRoleid" parameterType="String">
+		delete FROM T_BASE_USER_ROLE_MAPPING where roleid = #{roleid, jdbcType=VARCHAR}
+	</delete>
+</mapper>

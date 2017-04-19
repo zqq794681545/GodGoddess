@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.kingtopinfo.base.mapper.TBaseUserlogMapper
+	@Description T_BASE_USERLOG表映射配置文件
+	@author dzb@kingtopinfo.com
+	@date 2014-04-02 09:29:44
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.base.mapper.TBaseUserlogMapper">
+	
+	<select id="selectPagination" resultType="tBaseUserlogEntity" parameterType = "tBaseUserlogEntity">
+		select 
+			type,sessionid,userlogid,logtime,account,remoteaddress 
+		from 
+			T_BASE_USERLOG
+		<where>
+			<if test="account != null and account != ''">
+				account = #{account,jdbcType=VARCHAR}
+			</if>
+			<if test="sessionid != null and sessionid != ''">
+				and sessionid like '%'||#{sessionid,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="type != null and type != -1">
+				and type = #{type, jdbcType=INTEGER}
+			</if>
+			<if test="remoteaddress != null and remoteaddress != ''">
+				and remoteaddress like '%'||#{remoteaddress,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="logtimeStart != null">
+				and logtime >=  #{logtimeStart,jdbcType=TIME}
+			</if>
+			<if test="logtimeEnd != null">
+				and #{logtimeEnd,jdbcType=TIME} >= logtime
+			</if>
+		</where>	
+		order by logtime desc	
+	</select>
+	
+	<select id="selectCount" resultType="int" parameterType = "tBaseUserlogEntity">
+		select 
+			count(1)
+		from 
+			T_BASE_USERLOG
+		<where>
+			<if test="account != null and account != ''">
+				account = #{account,jdbcType=VARCHAR}
+			</if>
+			<if test="sessionid != null and sessionid != ''">
+				and sessionid like '%'||#{sessionid,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="type != null and type != -1">
+				and type = #{type, jdbcType=INTEGER}
+			</if>
+			<if test="remoteaddress != null and remoteaddress != ''">
+				and remoteaddress like '%'||#{remoteaddress,jdbcType=VARCHAR}||'%'
+			</if>
+			<if test="logtimeStart != null">
+				and logtime >=  #{logtimeStart,jdbcType=TIME}
+			</if>
+			<if test="logtimeEnd != null">
+				and #{logtimeEnd,jdbcType=TIME} >= logtime
+			</if>
+		</where>	
+	</select>
+	
+	<insert id="insert" parameterType="tBaseUserlogEntity">
+		insert into T_BASE_USERLOG(
+			type,sessionid,userlogid,logtime,account,remoteaddress
+		)values(
+			#{type, jdbcType=INTEGER},
+			#{sessionid,jdbcType=VARCHAR},
+			#{userlogid,jdbcType=VARCHAR},
+			#{logtime,jdbcType=TIME},
+			#{account,jdbcType=VARCHAR},
+			#{remoteaddress,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<!-- 以上为代码生成器自动生成 -->
+	
+</mapper>

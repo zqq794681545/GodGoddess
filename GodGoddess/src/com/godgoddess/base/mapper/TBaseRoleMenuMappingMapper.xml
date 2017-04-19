@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.kingtopinfo.base.mapper.TBaseRoleMenuMappingMapper
+	@Description T_BASE_ROLE_MENU_MAPPING表映射配置文件
+	@author dzb@kingtopinfo.com
+	@date 2014-02-18 09:21:54
+	@version 1.0
+	@remark create by generator
+	-->
+	<!-- 剪切至  mybatis-config.xml
+	
+	-->
+	
+<mapper namespace="com.godgoddess.base.mapper.TBaseRoleMenuMappingMapper">
+	
+	<insert id="insert" parameterType="tBaseRoleMenuMappingEntity">
+		insert into T_BASE_ROLE_MENU_MAPPING(
+			id,roleid,menuid,updatetime
+		)values(
+			#{id},#{roleid},#{menuid},#{updatetime}
+		)
+	</insert>
+	
+	<delete id="deleteByRoleidAndMenuid" parameterType="tBaseRoleMenuMappingEntity">
+		delete FROM T_BASE_ROLE_MENU_MAPPING where roleid = #{roleid} and menuid = #{menuid}
+	</delete>
+	
+	<!-- 以上为代码生成器自动生成 -->
+	
+	<delete id="deleteByMenuid" parameterType="String">
+		delete FROM T_BASE_ROLE_MENU_MAPPING where menuid = #{menuid}
+	</delete>
+	
+	<delete id="deleteByRoleid" parameterType="String">
+		delete FROM T_BASE_ROLE_MENU_MAPPING where roleid = #{roleid}
+	</delete>
+	
+	<select id="selectByMenuid" resultType="tBaseRoleMenuMappingEntity">
+        select 
+        	t.menuid 
+		from 
+			T_BASE_ROLE_MENU_MAPPING t
+		where 
+			menuid like '%.action%'
+    </select>
+</mapper>
