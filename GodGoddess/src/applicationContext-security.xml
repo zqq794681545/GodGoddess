@@ -32,8 +32,8 @@
     </http>
     
     <beans:bean id="loginSuccessHandler" class="com.godgoddess.base.security.LoginSuccessHandler">
-    	<beans:property name="defaultTargetUrl" value="/tBaseUser/selectone.action"></beans:property>  
-    </beans:bean>
+<!--     	<beans:property name="defaultTargetUrl" value="/tBaseUser/selectone.action"></beans:property>  
+ -->    </beans:bean>
     
     <beans:bean id="loginFailureHandler" class="com.godgoddess.base.security.LoginFailureHandler">
     	<beans:property name="defaultTargetUrl" value="/tBaseUser/selectone.action"></beans:property>  

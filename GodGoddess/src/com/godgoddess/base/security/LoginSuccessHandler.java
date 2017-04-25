@@ -26,20 +26,21 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 	
 
 
-	private String defaultTargetUrl;
-	
-	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+//	private String defaultTargetUrl;
+//	
+//	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request,
 			HttpServletResponse response, Authentication authentication) throws IOException,
 			ServletException {
-		this.redirectStrategy.sendRedirect(request, response, this.defaultTargetUrl);
 		
+//		this.redirectStrategy.sendRedirect(request, response, this.defaultTargetUrl);
+		response.getOutputStream().print("okok");
 	}
 	
-	public void setDefaultTargetUrl(String defaultTargetUrl) {  
-        this.defaultTargetUrl = defaultTargetUrl;  
-    }   
+//	public void setDefaultTargetUrl(String defaultTargetUrl) {  
+//        this.defaultTargetUrl = defaultTargetUrl;  
+//    }   
 
 }
