@@ -45,19 +45,19 @@ public class ResourceMetadataSource implements FilterInvocationSecurityMetadataS
 		ConfigAttribute ca = new SecurityConfig("base");
 		atts.add(ca);
 		resourceMap.put("/base/*", atts);
-		List<TBaseMenuEntity> urlList = tBaseResUrlSecurity.getAllUrl();
-		for(int t=0; t<urlList.size(); t++){
-			String url = urlList.get(t).getUrl();
-			List<String> list = tBaseResUrlSecurity.getRoleByUrl(url);	
-			atts = new ArrayList<ConfigAttribute>();
-			for(int i=0; i<list.size(); i++){
-				String roleid = list.get(i);
-				ca = new SecurityConfig(roleid);
-				atts.add(ca);
-			}
-			url = url.replace("../", "/");
-			resourceMap.put(url, atts);
-		}
+//		List<TBaseMenuEntity> urlList = tBaseResUrlSecurity.getAllUrl();
+//		for(int t=0; t<urlList.size(); t++){
+//			String url = urlList.get(t).getUrl();
+//			List<String> list = tBaseResUrlSecurity.getRoleByUrl(url);	
+//			atts = new ArrayList<ConfigAttribute>();
+//			for(int i=0; i<list.size(); i++){
+//				String roleid = list.get(i);
+//				ca = new SecurityConfig(roleid);
+//				atts.add(ca);
+//			}
+//			url = url.replace("../", "/");
+//			resourceMap.put(url, atts);
+//		}
 	}
 	
 	public Collection<ConfigAttribute> getAttributes(Object object){

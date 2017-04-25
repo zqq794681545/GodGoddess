@@ -13,7 +13,6 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import com.godgoddess.base.entity.TBaseUserlogEntity;
-import com.godgoddess.base.service.TBaseUserlogService;
 
 /**
  * @ClassName com.godgoddess.base.security.LoginSuccessHandler.java
@@ -25,8 +24,7 @@ import com.godgoddess.base.service.TBaseUserlogService;
 
 public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 	
-	@Autowired
-	private TBaseUserlogService tBaseUserlogService;
+
 
 	private String defaultTargetUrl;
 	
@@ -36,18 +34,8 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 	public void onAuthenticationSuccess(HttpServletRequest request,
 			HttpServletResponse response, Authentication authentication) throws IOException,
 			ServletException {
-
 		this.redirectStrategy.sendRedirect(request, response, this.defaultTargetUrl);
 		
-		UserInfo userInfo = (UserInfo)authentication.getPrincipal();
-		String ip = ClientInfo4SecurityUtil.getRemoteAddress(authentication);
-		String sessionid = ClientInfo4SecurityUtil.getSessionId(authentication);
-		TBaseUserlogEntity oTBaseUserlogEntity = new TBaseUserlogEntity();
-		oTBaseUserlogEntity.setType(1);
-		oTBaseUserlogEntity.setAccount(userInfo.getUsername());
-		oTBaseUserlogEntity.setRemoteaddress(ip);
-		oTBaseUserlogEntity.setSessionid(sessionid);
-		tBaseUserlogService.insert(oTBaseUserlogEntity);
 	}
 	
 	public void setDefaultTargetUrl(String defaultTargetUrl) {  

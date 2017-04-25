@@ -14,7 +14,6 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 import com.godgoddess.base.entity.TBaseUserlogEntity;
-import com.godgoddess.base.service.TBaseUserlogService;
 
 
 /**
@@ -27,8 +26,7 @@ import com.godgoddess.base.service.TBaseUserlogService;
 
 public class LoginFailureHandler implements AuthenticationFailureHandler {
 	
-	@Autowired
-	private TBaseUserlogService tBaseUserlogService;
+
 
 	private String defaultTargetUrl;
 
@@ -42,15 +40,7 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
 		@SuppressWarnings("deprecation")
 		Authentication authentication = authenticationException.getAuthentication();
 		if(null != authentication){
-			String acount = (String)authentication.getPrincipal();
-			String ip = ClientInfo4SecurityUtil.getRemoteAddress(authentication);
-			String sessionid = ClientInfo4SecurityUtil.getSessionId(authentication);
-			TBaseUserlogEntity oTBaseUserlogEntity = new TBaseUserlogEntity();
-			oTBaseUserlogEntity.setType(2);
-			oTBaseUserlogEntity.setAccount(acount);
-			oTBaseUserlogEntity.setRemoteaddress(ip);
-			oTBaseUserlogEntity.setSessionid(sessionid);
-			tBaseUserlogService.insert(oTBaseUserlogEntity);
+			
 		}
 		
 	}

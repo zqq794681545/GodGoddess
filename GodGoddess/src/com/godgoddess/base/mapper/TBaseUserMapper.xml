@@ -12,8 +12,15 @@
 	-->
 	
 <mapper namespace="com.godgoddess.base.mapper.TBaseUserMapper">
-
-	<select id="select" resultType="tBaseUserEntity">
+<select id="selectByAccount" resultType="tBaseUserEntity" parameterType="String">
+		select 
+			id,phone,groupid,sex,password,nikename,reg_time,avatar,email,last_login_time,start_vip_sj,end_vip_sj
+		from 
+			t_user 
+		where 
+			phone = #{account}
+	</select>
+	<!-- <select id="select" resultType="tBaseUserEntity">
 		select 
 			id,account,password,username,xzqh,state,updatetime 
 		from 
@@ -131,7 +138,7 @@
 		delete FROM T_BASE_USER where id = #{id}
 	</delete>
 	
-	<!-- 以上为代码生成器自动生成 -->
+	以上为代码生成器自动生成
     
     <update id="updatePassword" parameterType="tBaseUserEntity">
 		update T_BASE_USER
@@ -318,5 +325,5 @@
 			t.gid = ''
 		where
 			t.id = #{id}
-    </update>
+    </update> -->
 </mapper>

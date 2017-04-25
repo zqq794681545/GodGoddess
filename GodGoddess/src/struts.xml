@@ -15,19 +15,7 @@
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 
 	<!-- base模块 -->
-	<include file="/com/godgoddess/base/action/TBaseType_struts.xml"></include>
 	<include file="/com/godgoddess/base/action/TBaseUser_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TBaseMenu_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TBaseRole_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TBaseRoleMenuMapping_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TBaseUserRoleMapping_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TBaseUserlog_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TBaseMenuModuleMapping_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TSystemUser_struts.xml"></include>
 	
-	<include file="/com/godgoddess/base/action/TSystemBillboard_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TBaseDocument_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TBaseFile_struts.xml"></include>
-	<include file="/com/godgoddess/base/action/TBaseHolidays_struts.xml"></include>
 
 </struts>

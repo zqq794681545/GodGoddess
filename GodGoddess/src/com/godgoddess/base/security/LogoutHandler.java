@@ -13,7 +13,6 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 
 import com.godgoddess.base.entity.TBaseUserlogEntity;
-import com.godgoddess.base.service.TBaseUserlogService;
 
 /**
  * @ClassName com.godgoddess.base.security.LogoutHandler.java
@@ -24,9 +23,7 @@ import com.godgoddess.base.service.TBaseUserlogService;
  */
 
 public class LogoutHandler implements LogoutSuccessHandler {
-	
-	@Autowired
-	private TBaseUserlogService tBaseUserlogService;
+
 	
 	private String defaultTargetUrl;
 
@@ -39,15 +36,7 @@ public class LogoutHandler implements LogoutSuccessHandler {
 		
 		this.redirectStrategy.sendRedirect(request, response, this.defaultTargetUrl);
 		if(null != authentication){
-			UserInfo userInfo = (UserInfo)authentication.getPrincipal();
-			String ip = ClientInfo4SecurityUtil.getRemoteAddress(authentication);
-			String sessionid = ClientInfo4SecurityUtil.getSessionId(authentication);
-			TBaseUserlogEntity oTBaseUserlogEntity = new TBaseUserlogEntity();
-			oTBaseUserlogEntity.setType(3);
-			oTBaseUserlogEntity.setAccount(userInfo.getUsername());
-			oTBaseUserlogEntity.setRemoteaddress(ip);
-			oTBaseUserlogEntity.setSessionid(sessionid);
-			tBaseUserlogService.insert(oTBaseUserlogEntity);
+		
 		}
 		
 	}

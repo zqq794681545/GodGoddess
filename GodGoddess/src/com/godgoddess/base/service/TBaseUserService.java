@@ -7,9 +7,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.godgoddess.base.entity.TBaseGroupEntity;
 import com.godgoddess.base.entity.TBaseUserEntity;
-import com.godgoddess.base.mapper.TBaseGroupMapper;
 import com.godgoddess.base.mapper.TBaseUserMapper;
 import com.godgoddess.base.util.IDUtil;
 import com.godgoddess.base.util.Md5;
@@ -27,154 +25,127 @@ public class TBaseUserService {
 	
 	@Autowired
 	private TBaseUserMapper tBaseUserMapper;
-	@Autowired
-	private TBaseGroupMapper tBaseGroupMapper;
-	@Autowired
-	private TBaseUserRoleMappingService tBaseUserRoleMappingService;
 	
-	public List<TBaseUserEntity> select(){
-		
-		return tBaseUserMapper.select();
-	}
+//	public List<TBaseUserEntity> select(){
+//		
+//		return tBaseUserMapper.select();
+//	}
+//	
+//	public TBaseUserEntity selectByKey(String id){
+//	
+//		return tBaseUserMapper.selectByKey(id);
+//	}
 	
-	public TBaseUserEntity selectByKey(String id){
+//	public int insert(TBaseUserEntity e){
+//		e.setPassword(Md5.md5Digest(e.getPassword()));
+//		e.setUpdatetime(new Date());
+//		e.setId(IDUtil.getId());
+//		return tBaseUserMapper.insert(e);
+//	}
 	
-		return tBaseUserMapper.selectByKey(id);
-	}
+//	public int update(TBaseUserEntity e){
+//		e.setUpdatetime(new Date());
+//		return tBaseUserMapper.update(e);
+//	}
 	
-	public int insert(TBaseUserEntity e){
-		e.setPassword(Md5.md5Digest(e.getPassword()));
-		e.setUpdatetime(new Date());
-		e.setId(IDUtil.getId());
-		return tBaseUserMapper.insert(e);
-	}
-	
-	public int update(TBaseUserEntity e){
-		e.setUpdatetime(new Date());
-		return tBaseUserMapper.update(e);
-	}
-	
-	public int updatePassword(TBaseUserEntity e){
+//	public int updatePassword(TBaseUserEntity e){
+//
+//		e.setPassword(Md5.md5Digest(e.getPassword()));
+//		return tBaseUserMapper.updatePassword(e);
+//	}
 
-		e.setPassword(Md5.md5Digest(e.getPassword()));
-		return tBaseUserMapper.updatePassword(e);
-	}
 	
-	public int delete(String id){
-		int row = tBaseUserMapper.delete(id);
-		tBaseUserRoleMappingService.deleteByUserid(id);
-		return row ;
-	}
-	
-	public int deletes(String[] keys){
-		int row = 0;
-		for(String id : keys){
-			row += delete(id);
-		}
-		return row;
-	}
-	
-	public List<TBaseUserEntity> selectPagination(TBaseUserEntity tBaseUserEntity,RowBounds rowBounds){
-		List<TBaseUserEntity> list = tBaseUserMapper.selectPagination(tBaseUserEntity,rowBounds);
-		for(TBaseUserEntity each:list){
-			String gname = each.getGname();
-			while(each.getPid() != null && !"".equals(each.getPid())){
-				TBaseGroupEntity t = tBaseGroupMapper.selectGnameByPid(each.getPid());
-				gname = t.getGname()+" > "+gname;
-				each.setPid(t.getPid());
-				each.setInstitutions(gname.replace(t.getGname()+" > ",""));
-			}
-		}
-		return list;
-	}
-	
-	public Integer getCount(TBaseUserEntity tBaseUserEntity){
-		return tBaseUserMapper.getCount(tBaseUserEntity);
-	}
-	
-	/**
-	* 以上为代码生成器自动生成
-	*/
-	public List<TBaseUserEntity> selectUnauthorizedPagination(TBaseUserEntity tBaseUserEntity,RowBounds rowBounds){
-		return tBaseUserMapper.selectUnauthorizedPagination(tBaseUserEntity,rowBounds);
-	}
-	
-	public Integer getUnauthorizedCount(TBaseUserEntity tBaseUserEntity){
-		return tBaseUserMapper.getUnauthorizedCount(tBaseUserEntity);
-	}
-	
-	public List<TBaseUserEntity> selectAuthorizedPagination(TBaseUserEntity tBaseUserEntity,RowBounds rowBounds){
-		return tBaseUserMapper.selectAuthorizedPagination(tBaseUserEntity,rowBounds);
-	}
-	
-	public Integer getAuthorizedCount(TBaseUserEntity tBaseUserEntity){
-		return tBaseUserMapper.getAuthorizedCount(tBaseUserEntity);
-	}
-	
-	public TBaseUserEntity selectByAccount(String account){
-		return tBaseUserMapper.selectByAccount(account);
-	}
-	public int selectByAccountnum(String account){
-		return tBaseUserMapper.selectByAccountnum(account);
-	}
-	
-	public String selectPasswordByAccount(String account){
-		
-		return tBaseUserMapper.selectPasswordByAccount(account);
-	}
-	
-	public String selectXzqhByAccount(String account){
-		
-		return tBaseUserMapper.selectXzqhByAccount(account);
-	}
-	public List<String> selectRoleIdByAccount(String account){
-		
-		return tBaseUserMapper.selectRoleIdByAccount(account);
-	}
-	public int verifyUserInfo(String account, String password){
-		
-		TBaseUserEntity e = new TBaseUserEntity();
-		e.setAccount(account);
-		e.setPassword(password);
-		return tBaseUserMapper.verifyUserInfo(e);
-	}
-	
-	//查询未加入机构用户
-	public List<TBaseUserEntity> selectUnaddGroupUserPagination(TBaseUserEntity tBaseUserEntity,RowBounds rowBounds){
-		return tBaseUserMapper.selectUnaddGroupUserPagination(tBaseUserEntity,rowBounds);
-	}
-	
-	public Integer getUnaddGroupUserCount(TBaseUserEntity tBaseUserEntity){
-		return tBaseUserMapper.getUnaddGroupUserCount(tBaseUserEntity);
-	}
-	
-	//查询已加入机构用户
-		public List<TBaseUserEntity> selectAddGroupUserPagination(TBaseUserEntity e,RowBounds rowBounds){
-			return tBaseUserMapper.selectAddGroupUserPagination(e,rowBounds);
-		}
-		
-		public Integer getAddGroupUserCount(TBaseUserEntity e){
-			return tBaseUserMapper.getAddGroupUserCount(e);
-		}
-	
-	//加入机构
-		public int AddGroupByGid(String userid,String gid){
-			TBaseUserEntity tBaseUserEntity = new TBaseUserEntity();
-			tBaseUserEntity.setGid(gid);
-			tBaseUserEntity.setId(userid);
-			return tBaseUserMapper.AddGroupByGid(tBaseUserEntity);
-		}
-		
-	//移除机构
-			public int DropGroupByGid(String userid){
-				return tBaseUserMapper.DropGroupByGid(userid);
-			}
 
-			public List<TBaseUserEntity> selectUserByGid(String gid) {
-				return tBaseUserMapper.selectUserByGid(gid);
-			}
-			
-			public String selectUserNameByKey(String assignee) {
-				return tBaseUserMapper.selectUserNameByKey(assignee);
-			}
+	
+	
+	
+//	public Integer getCount(TBaseUserEntity tBaseUserEntity){
+//		return tBaseUserMapper.getCount(tBaseUserEntity);
+//	}
+//	
+//	/**
+//	* 以上为代码生成器自动生成
+//	*/
+//	public List<TBaseUserEntity> selectUnauthorizedPagination(TBaseUserEntity tBaseUserEntity,RowBounds rowBounds){
+//		return tBaseUserMapper.selectUnauthorizedPagination(tBaseUserEntity,rowBounds);
+//	}
+//	
+//	public Integer getUnauthorizedCount(TBaseUserEntity tBaseUserEntity){
+//		return tBaseUserMapper.getUnauthorizedCount(tBaseUserEntity);
+//	}
+//	
+//	public List<TBaseUserEntity> selectAuthorizedPagination(TBaseUserEntity tBaseUserEntity,RowBounds rowBounds){
+//		return tBaseUserMapper.selectAuthorizedPagination(tBaseUserEntity,rowBounds);
+//	}
+//	
+//	public Integer getAuthorizedCount(TBaseUserEntity tBaseUserEntity){
+//		return tBaseUserMapper.getAuthorizedCount(tBaseUserEntity);
+//	}
+	
+	public TBaseUserEntity selectByAccount(String phone){
+		return tBaseUserMapper.selectByAccount(phone);
+	}
+//	public int selectByAccountnum(String account){
+//		return tBaseUserMapper.selectByAccountnum(account);
+//	}
+//	
+//	public String selectPasswordByAccount(String account){
+//		
+//		return tBaseUserMapper.selectPasswordByAccount(account);
+//	}
+	
+//	public String selectXzqhByAccount(String account){
+//		
+//		return tBaseUserMapper.selectXzqhByAccount(account);
+//	}
+//	public List<String> selectRoleIdByAccount(String account){
+//		
+//		return tBaseUserMapper.selectRoleIdByAccount(account);
+//	}
+//	public int verifyUserInfo(String account, String password){
+//		
+//		TBaseUserEntity e = new TBaseUserEntity();
+//		e.setAccount(account);
+//		e.setPassword(password);
+//		return tBaseUserMapper.verifyUserInfo(e);
+//	}
+	
+//	//查询未加入机构用户
+//	public List<TBaseUserEntity> selectUnaddGroupUserPagination(TBaseUserEntity tBaseUserEntity,RowBounds rowBounds){
+//		return tBaseUserMapper.selectUnaddGroupUserPagination(tBaseUserEntity,rowBounds);
+//	}
+//	
+//	public Integer getUnaddGroupUserCount(TBaseUserEntity tBaseUserEntity){
+//		return tBaseUserMapper.getUnaddGroupUserCount(tBaseUserEntity);
+//	}
+//	
+//	//查询已加入机构用户
+//		public List<TBaseUserEntity> selectAddGroupUserPagination(TBaseUserEntity e,RowBounds rowBounds){
+//			return tBaseUserMapper.selectAddGroupUserPagination(e,rowBounds);
+//		}
+//		
+//		public Integer getAddGroupUserCount(TBaseUserEntity e){
+//			return tBaseUserMapper.getAddGroupUserCount(e);
+//		}
+//	
+//	//加入机构
+//		public int AddGroupByGid(String userid,String gid){
+//			TBaseUserEntity tBaseUserEntity = new TBaseUserEntity();
+//			tBaseUserEntity.setGid(gid);
+//			tBaseUserEntity.setId(userid);
+//			return tBaseUserMapper.AddGroupByGid(tBaseUserEntity);
+//		}
+//		
+//	//移除机构
+//			public int DropGroupByGid(String userid){
+//				return tBaseUserMapper.DropGroupByGid(userid);
+//			}
+//
+//			public List<TBaseUserEntity> selectUserByGid(String gid) {
+//				return tBaseUserMapper.selectUserByGid(gid);
+//			}
+//			
+//			public String selectUserNameByKey(String assignee) {
+//				return tBaseUserMapper.selectUserNameByKey(assignee);
+//			}
 }

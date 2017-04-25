@@ -20,34 +20,34 @@ import org.springframework.security.core.GrantedAuthority;
 
 public class UrlDecisionManager implements AccessDecisionManager {
 
-	/**
-	 * 资源权限配合拦截，不满足要求的资源抛出异常
-	 * authentication 用户拥有的权限
-	 * object 拦截对象
-	 * configAttributes	资源需要的权限
-	 * 后续添加行为审计
-	 */
+//	/**
+//	 * 资源权限配合拦截，不满足要求的资源抛出异常
+//	 * authentication 用户拥有的权限
+//	 * object 拦截对象
+//	 * configAttributes	资源需要的权限
+//	 * 后续添加行为审计
+//	 */
 	public void decide(Authentication authentication, Object object, Collection<ConfigAttribute> configAttributes){
-		
-        if(configAttributes == null){
-            return;
-        }else{
-        	
-        	 Iterator<ConfigAttribute> ite = configAttributes.iterator();
-             while(ite.hasNext()){
-             	
-                 ConfigAttribute ca = ite.next();
-                 String needRole = ((SecurityConfig)ca).getAttribute();
-                 Collection<? extends GrantedAuthority> auth = authentication.getAuthorities();
-                 authentication.getAuthorities();
-                 for(GrantedAuthority ga:auth){
-                     if(needRole.equals(ga.getAuthority())){
-                         return;
-                     }
-                 }
-             }
-             throw new AccessDeniedException("没有足够的权限访问资源");
-        }
+//		
+//        if(configAttributes == null){
+//            return;
+//        }else{
+//        	
+//        	 Iterator<ConfigAttribute> ite = configAttributes.iterator();
+//             while(ite.hasNext()){
+//             	
+//                 ConfigAttribute ca = ite.next();
+//                 String needRole = ((SecurityConfig)ca).getAttribute();
+//                 Collection<? extends GrantedAuthority> auth = authentication.getAuthorities();
+//                 authentication.getAuthorities();
+//                 for(GrantedAuthority ga:auth){
+//                     if(needRole.equals(ga.getAuthority())){
+//                         return;
+//                     }
+//                 }
+//             }
+//             throw new AccessDeniedException("没有足够的权限访问资源");
+//        }
     }
 
     @Override

@@ -22,8 +22,8 @@
     	
         <form-login login-page="/base/login.html"
         			login-processing-url="/_check" 
-        			username-parameter="un" 
-        			password-parameter="pw"
+        			username-parameter="phone" 
+        			password-parameter="password"
         			authentication-success-handler-ref="loginSuccessHandler" 
         			authentication-failure-handler-ref="loginFailureHandler" />
         <logout success-handler-ref="logoutHandler"/>
@@ -32,11 +32,11 @@
     </http>
     
     <beans:bean id="loginSuccessHandler" class="com.godgoddess.base.security.LoginSuccessHandler">
-    	<beans:property name="defaultTargetUrl" value="/base/index.html"></beans:property>  
+    	<beans:property name="defaultTargetUrl" value="/tBaseUser/selectone.action"></beans:property>  
     </beans:bean>
     
     <beans:bean id="loginFailureHandler" class="com.godgoddess.base.security.LoginFailureHandler">
-    	<beans:property name="defaultTargetUrl" value="/base/login.jsp?login=1"></beans:property>  
+    	<beans:property name="defaultTargetUrl" value="/tBaseUser/selectone.action"></beans:property>  
     </beans:bean>
     
      <beans:bean id="logoutHandler" class="com.godgoddess.base.security.LogoutHandler">

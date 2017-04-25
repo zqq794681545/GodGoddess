@@ -28,6 +28,7 @@ public class Login implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String account){
+		System.out.println("--------------"+account+"-----------------");
 		
 		if (!"".equals(account)) {
 			
@@ -38,13 +39,13 @@ public class Login implements UserDetailsService {
 				Collection<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
 				SimpleGrantedAuthority auth = new SimpleGrantedAuthority("base");	//默认加载base权限
 				auths.add(auth);
-				List<String> roleid = tBaseUserService.selectRoleIdByAccount(account);
-				for(int i=0;i<roleid.size();i++){
-					auth = new SimpleGrantedAuthority(roleid.get(i));
-					auths.add(auth);
-				}
+//				List<String> roleid = tBaseUserService.selectRoleIdByAccount(account);
+//				for(int i=0;i<roleid.size();i++){
+//					auth = new SimpleGrantedAuthority(roleid.get(i));
+//					auths.add(auth);
+//				}
 				UserInfo user = new UserInfo(account, oTBaseUserEntity.getPassword(), true, true, true, true, auths);
-				user.setUser(oTBaseUserEntity.getUsername());	//添加附加属性
+				user.setUser(oTBaseUserEntity.getNikename());	//添加附加属性
 				user.setUserid(oTBaseUserEntity.getId());
 				return user;
 			}else{
