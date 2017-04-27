@@ -28,7 +28,7 @@ public class UrlDecisionManager implements AccessDecisionManager {
 //	 * 后续添加行为审计
 //	 */
 	public void decide(Authentication authentication, Object object, Collection<ConfigAttribute> configAttributes){
-//		
+//		System.out.println("---------3333333333333333333333333222222222");
 //        if(configAttributes == null){
 //            return;
 //        }else{

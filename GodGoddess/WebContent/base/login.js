@@ -21,11 +21,8 @@ $(document).ready(function(){
     
 	//登录
 	$('#_login').submit(function(){
-		alert("Dddd");
 		var _pw = $('#_password').val();
 		var _user = $('#_username').val();
-		alert(_pw);
-		alert(_user);
 		if(trim(_user) == "" || trim(_user) == null)
 		{	
 ////			$("#check_zp").hide();

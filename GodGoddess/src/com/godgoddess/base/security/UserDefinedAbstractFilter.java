@@ -29,6 +29,9 @@ public class UserDefinedAbstractFilter extends AbstractSecurityInterceptor imple
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		FilterInvocation fi = new FilterInvocation(request, response, chain);
+//		if (!checkAllowaccess(request.get)) {
+//			
+//		}
 		invoke(fi);
 	}
 
@@ -43,6 +46,7 @@ public class UserDefinedAbstractFilter extends AbstractSecurityInterceptor imple
 	public void invoke(FilterInvocation fi) throws IOException,
 			ServletException {
 		InterceptorStatusToken token = super.beforeInvocation(fi);
+		System.out.println("---------"+token);
 		try {
 			fi.getChain().doFilter(fi.getRequest(), fi.getResponse());
 		} finally {

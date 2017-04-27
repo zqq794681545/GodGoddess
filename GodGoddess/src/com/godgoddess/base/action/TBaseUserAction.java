@@ -112,7 +112,12 @@ public class TBaseUserAction extends ActionSupport implements ServletRequestAwar
 		this.str="逸群啊逸群";
 	
 	return SUCCESS;
-}
+	}
+	public String selecttwo(){
+		this.str="逸群啊逸群111";
+	
+		return SUCCESS;
+	}
 //	public String select(){
 //		this.rows = tBaseUserService.select();
 //		return SUCCESS;

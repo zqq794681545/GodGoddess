@@ -13,9 +13,35 @@
 
 	<constant name="struts.locale" value="zh_CN" />
 	<constant name="struts.i18n.encoding" value="UTF-8" />
-
+	
 	<!-- base模块 -->
 	<include file="/com/godgoddess/base/action/TBaseUser_struts.xml"></include>
 	
+	<package name="abstract_struts" abstract="true" extends="json-default" namespace="/">
+	 <interceptors>
+		<interceptor name="myInterceptor" class="com.godgoddess.base.util.myInterceptor">
+
+              <!-- 指定系统初始化给拦截器的参数 -->
+
+              <param name="token">张钊钊</param>
+
+           </interceptor>
+
+           <!-- 加到自己设置的拦截器栈里边去 -->
+
+           <interceptor-stack name="myStack">
+
+              <interceptor-ref name="myInterceptor">
+
+              </interceptor-ref>
+
+              <interceptor-ref name="defaultStack"></interceptor-ref>
+
+           </interceptor-stack>
+
+       </interceptors>
+      <!--   <default-interceptor-ref name="myStack">
+         </default-interceptor-ref> -->
+ 	</package>
 
 </struts>

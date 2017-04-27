@@ -36,7 +36,15 @@
 		<property name="logStatementsEnabled" value="true"/>
 	</bean>
 	-->
-	<!-- BoneCP 连接池 end -->
+	  <!-- 配置缓存管理器工厂 -->
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+	    <property name="configLocation" value="classpath:ehcache.xml" />
+	    <property name="shared" value="true" />
+	</bean>
+	<bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+	     <property name="cacheName" value="myCache" />
+	     <property name="cacheManager" ref="cacheManager" />
+	</bean>
 	
 	<!-- 设置事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -53,7 +61,8 @@
 	<context:component-scan base-package="
 		com.godgoddess.base.service,
 		com.godgoddess.base.action,
-		com.godgoddess.base.security
+		com.godgoddess.base.security,
+		com.godgoddess.base.util
 		" />
 
 	<!-- 设置spring托管数据源 -->

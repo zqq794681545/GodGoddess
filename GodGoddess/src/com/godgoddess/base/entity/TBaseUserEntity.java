@@ -1,5 +1,7 @@
 package com.godgoddess.base.entity;
 
+import java.io.Serializable;
+
 /**
  * @ClassName com.kingtopinfo.base.entity.TBaseUserEntity
  * @Description T_BASE_USER表映射实体类
@@ -9,7 +11,8 @@ package com.godgoddess.base.entity;
  * @remark create by generator
  */
 
-public class TBaseUserEntity{
+@SuppressWarnings("serial")
+public class TBaseUserEntity implements Serializable{
 	
 	private String id;
 	private String phone;

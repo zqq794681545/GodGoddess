@@ -6,8 +6,28 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.MessageDigest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Md5 {
+	public static String getMd5Time(String pw,String un) {
+		String res="";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date =null;
+		try {
+			date = simpleDateFormat.parse(simpleDateFormat.format(new Date()));
+		    long ts = date.getTime();
+	        res = String.valueOf(ts);
+	   
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String str = md5Digest(un+pw+res);
+	     return str;
+		
+	}
 
 	public static String md5Digest(String src) {
 		// 定义数字签名方法, 可用：MD5, SHA-1
@@ -64,8 +84,9 @@ public class Md5 {
 	
 	public static void main(String[] arg){
 		
-		String str = md5Digest(new File("E:\\Downloads\\P60908-083741.jpg"));
-		System.out.println(str);
+//		String str = md5Digest(new File("E:\\Downloads\\P60908-083741.jpg"));
+//		System.out.println(str);
+//		System.out.println(getMd5Time());
 	}
 	
 }
