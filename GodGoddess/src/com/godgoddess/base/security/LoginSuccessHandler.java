@@ -1,18 +1,15 @@
 package com.godgoddess.base.security;
 
 import java.io.IOException;
-
+import com.alibaba.fastjson.JSONObject;
 import com.godgoddess.base.util.Md5;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
-
 import com.godgoddess.base.action.Memory;
 import com.godgoddess.base.entity.TBaseUserEntity;
 
@@ -40,10 +37,12 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 		String token = Md5.getMd5Time(userInfo.getPassword(), userInfo.getUsername());
 		memory.clearLoginInfoBySeed(seed);
 		TBaseUserEntity tBaseUserEntity = new TBaseUserEntity();
-		tBaseUserEntity.setEmail(token);
-		memory.setValue(seed, token, 60, 0);
-		memory.setValue(token, tBaseUserEntity, 60, 0);	
-        response.getWriter().write(token);
+		tBaseUserEntity.setPhone(userInfo.getUsername());
+		tBaseUserEntity.setToken(token);
+		memory.setValue(seed, token, 300, 0);
+		memory.setValue(token, tBaseUserEntity,300,0);
+		String json  = JSONObject.toJSONString(tBaseUserEntity);
+		response.getWriter().write(json);
         response.getWriter().close();
 //		HttpSession session = request.getSession();
 //		session.setAttribute("to",Md5.getMd5Time());

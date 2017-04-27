@@ -26,6 +26,15 @@ public class TBaseUserEntity implements Serializable{
 	private java.util.Date last_login_time;
 	private java.util.Date start_vip_sj;
 	private java.util.Date end_vip_sj;
+	private String token;
+	
+	
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
 	public String getId() {
 		return id;
 	}

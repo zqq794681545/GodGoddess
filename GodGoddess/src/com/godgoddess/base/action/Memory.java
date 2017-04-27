@@ -19,6 +19,8 @@ public class Memory {
 	
 	public void setValue(String key, Object value,int timeToIdleSeconds,int timeToLiveSeconds) {
          ehcache.put(new Element(key, value,timeToIdleSeconds,timeToLiveSeconds));
+         //timeToIdleSeconds 设置对象在cache中的最大闲置时间，就是 在一直不访问这个对象的前提下，这个对象可以在cache中的存活时间。
+         //timeToLiveSeconds 于设置对象在cache中的最大存活时间，就是 无论对象访问或是不访问(闲置),这个对象在cache中的存活时间.
      }
      
      public Object getValue(String key) {
