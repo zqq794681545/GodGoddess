@@ -36,13 +36,17 @@ public class TBaseUserService {
 //		return tBaseUserMapper.selectByKey(id);
 //	}
 	
-//	public int insert(TBaseUserEntity e){
-//		e.setPassword(Md5.md5Digest(e.getPassword()));
-//		e.setUpdatetime(new Date());
-//		e.setId(IDUtil.getId());
-//		return tBaseUserMapper.insert(e);
-//	}
-	
+	public int insert(TBaseUserEntity e){
+			e.setPassword(Md5.md5Digest("2"));
+			e.setId(IDUtil.getId());
+			e.setPhone("18759608988");
+			e.setGroupid(2);
+			e.setReg_time(new Date());
+		return tBaseUserMapper.insert(e);
+	}
+	public int selectName(){
+		return tBaseUserMapper.selectName("18759608988");
+	}
 //	public int update(TBaseUserEntity e){
 //		e.setUpdatetime(new Date());
 //		return tBaseUserMapper.update(e);

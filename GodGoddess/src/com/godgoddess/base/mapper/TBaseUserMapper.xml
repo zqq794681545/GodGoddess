@@ -12,7 +12,7 @@
 	-->
 	
 <mapper namespace="com.godgoddess.base.mapper.TBaseUserMapper">
-<select id="selectByAccount" resultType="tBaseUserEntity" parameterType="String">
+	<select id="selectByAccount" resultType="tBaseUserEntity" parameterType="String">
 		select 
 			id,phone,groupid,sex,password,nikename,reg_time,avatar,email,last_login_time,start_vip_sj,end_vip_sj
 		from 
@@ -20,6 +20,31 @@
 		where 
 			phone = #{account}
 	</select>
+	<select id="selectName" resultType="int" parameterType="String">
+		select 
+			count(*) 
+		from 
+			t_user 
+		<where>
+			phone = #{phone}
+		</where>
+	</select>
+	
+	<insert id="insert"  parameterType="tBaseUserEntity">
+		insert into t_user(
+			id,
+			phone,
+			password,
+			reg_time,
+			groupid
+		)values(
+			#{id, jdbcType=VARCHAR},
+			#{phone, jdbcType=VARCHAR},
+			#{password, jdbcType=VARCHAR},
+			#{reg_time, jdbcType=VARCHAR},
+			#{groupid, jdbcType=VARCHAR}
+		)
+	</insert>
 	<!-- <select id="select" resultType="tBaseUserEntity">
 		select 
 			id,account,password,username,xzqh,state,updatetime 

@@ -128,10 +128,25 @@ public class TBaseUserAction extends ActionSupport implements ServletRequestAwar
 //		return SUCCESS;
 //	}
 	
-//	public String insert(){
-//		this.row = tBaseUserService.insert(this.e);
-//		return SUCCESS;
-//	}
+	public String register(){
+		int row = tBaseUserService.selectName();
+		if(row >0){
+			this.map.put("code", "400");
+			this.map.put("massage", "该号码已被注册，请重新输入手机号码");
+		}
+		else{
+			this.row = tBaseUserService.insert(this.e);
+			if(row ==1 ){
+				this.map.put("code", "200");
+				this.map.put("massage", "注册成功");
+			}
+			else{
+				this.map.put("code", "400");
+				this.map.put("massage", "注册失败");
+			}
+		}
+		return SUCCESS;
+	}
 //	
 //	public String update(){
 //		this.row = tBaseUserService.update(this.e);
