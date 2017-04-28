@@ -47,6 +47,15 @@ public class TBaseUserService {
 	public int selectName(){
 		return tBaseUserMapper.selectName("18759608988");
 	}
+	public int updateNiCAndLogo(TBaseUserEntity e){
+		e.setUpdatetime(new Date());
+		return tBaseUserMapper.updateNiCAndLogo(e);
+	}
+	public int updatePassword(TBaseUserEntity e){
+		e.setUpdatetime(new Date());
+		return tBaseUserMapper.updatePassword(e);
+	}
+	
 //	public int update(TBaseUserEntity e){
 //		e.setUpdatetime(new Date());
 //		return tBaseUserMapper.update(e);

@@ -20,6 +20,8 @@ public interface TBaseUserMapper {
 //	List<TBaseUserEntity> select();
 //	TBaseUserEntity selectByKey(String id);
 	int insert(TBaseUserEntity e);
+	int updateNiCAndLogo(TBaseUserEntity e);
+	int updatePassword(TBaseUserEntity e);
 	int selectName(String phone);
 //	int update(TBaseUserEntity e);
 //	int delete(String id);

@@ -45,6 +45,25 @@
 			#{groupid, jdbcType=VARCHAR}
 		)
 	</insert>
+	
+	<update id="updateNiCAndLogo" parameterType="tBaseUserEntity">
+		update t_user
+		set
+			nikename = #{nikename, jdbcType=VARCHAR},
+			avatar = #{avatar, jdbcType=VARCHAR},
+			updatetime = #{updatetime}
+
+		where 
+			id = #{id}
+	</update>
+	<update id="updatePassword" parameterType="tBaseUserEntity">
+		update t_user
+		set
+			password = #{password, jdbcType=VARCHAR},
+			updatetime = #{updatetime}
+		where 
+			id = #{id}
+	</update>
 	<!-- <select id="select" resultType="tBaseUserEntity">
 		select 
 			id,account,password,username,xzqh,state,updatetime 
