@@ -1,15 +1,22 @@
 package com.godgoddess.base.security;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.alibaba.fastjson.JSONObject;
 import com.godgoddess.base.util.Md5;
+import com.godgoddess.base.util.mapUtil;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
+
 import com.godgoddess.base.action.Memory;
 import com.godgoddess.base.entity.TBaseUserEntity;
 
@@ -41,7 +48,8 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 		tBaseUserEntity.setToken(token);
 		memory.setValue(seed, token, 300, 0);
 		memory.setValue(token, tBaseUserEntity,300,0);
-		String json  = JSONObject.toJSONString(tBaseUserEntity);
+		String json  = JSONObject.toJSONString(new mapUtil().setMaptoken("200", "登录成功",token));
+		response.setContentType("text/html;charset=UTF-8");
 		response.getWriter().write(json);
         response.getWriter().close();
 //		HttpSession session = request.getSession();
