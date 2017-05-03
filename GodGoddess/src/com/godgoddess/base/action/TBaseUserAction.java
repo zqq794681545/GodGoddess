@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,6 +44,9 @@ public class TBaseUserAction extends ActionSupport implements ServletRequestAwar
 	
 	private HttpServletRequest request;
 	private HttpServletResponse response;
+	
+	@Autowired
+	private Memory memory;
 	@Autowired
 	private TBaseUserService tBaseUserService;
 	@Autowired
@@ -137,24 +141,46 @@ public class TBaseUserAction extends ActionSupport implements ServletRequestAwar
 //		this.e = tBaseUserService.selectByKey(e.getId());
 //		return SUCCESS;
 //	}
+	public String getAcode(){
+		int _row = getRandNum(100000,999999);
+		memory.clearLoginInfoBySeed("acode");
+		memory.setValue("acode", _row,300,0);
+		this.row = _row;
+		return SUCCESS;
+	}
+	public String getPassword(){
+		int _row = tBaseUserService.selectName(e.getPhone());
+		if(_row >0 && memory.getValue("acode").equals(e.getAcode())){
+			 this.row=tBaseUserService.updatePassword(e);
+			 if(this.row ==1){
+				 setMaputil("200","修改密码成功",null);
+			 }
+		}
+		else{
+			setMaputil("400","该号码还没有注册",null);
+		}
+		return SUCCESS;
+	}
+	public static int getRandNum(int min, int max) {
+	    int randNum = min + (int)(Math.random() * ((max - min) + 1));
+	    return randNum;
+	}
 	public String selectArray(){
 		
 		String str = "";
 //		str = tBaseFileAction.downloadByFilePath("F:\\ios-7.png");
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<Object> data1 = new ArrayList<Object>();
-		data.add("F:\\tp\\t_1.jpg");
-		data.add("F:\\tp\\t_2.jpg");
-		data.add("F:\\tp\\t_3.jpg");
-		data.add("F:\\tp\\t_4.jpg");
-		data.add("F:\\tp\\t_5.jpg");
-		data.add("F:\\tp\\t_6.jpg");
-		data.add("F:\\tp\\t_7.jpg");
-		data.add("F:\\tp\\t_8.jpg");
-		data.add("F:\\tp\\t_9.jpg");
-		data.add("F:\\tp\\t_10.jpg");
-		data.add("F:\\tp\\t_11.jpg");
-		data.add("F:\\tp\\t_12.jpg");
+		data.add("F:\\tp\\tt_11.jpg");
+		data.add("F:\\tp\\tt_12.jpg");
+		data.add("F:\\tp\\tt_13.jpg");
+		data.add("F:\\tp\\tt_14.jpg");
+		data.add("F:\\tp\\tt_15.jpg");
+		data.add("F:\\tp\\tt_16.jpg");
+		data.add("F:\\tp\\tt_17.jpg");
+		data.add("F:\\tp\\tt_18.jpg");
+		data.add("F:\\tp\\tt_19.jpg");
+		data.add("F:\\tp\\tt_110.jpg");
 //		for(int i=1;i<=12;i++){
 //			data1.add(tBaseFileAction.downloadByFilePath(data.get(i)));
 //		}
@@ -166,7 +192,7 @@ public class TBaseUserAction extends ActionSupport implements ServletRequestAwar
 	}
 	
 	public String register(){
-		int row = tBaseUserService.selectName();
+		int row = tBaseUserService.selectName(e.getPhone());
 		if(row >0){
 //			ArrayList<String> data = new ArrayList<String>();
 //			data.add("2222");

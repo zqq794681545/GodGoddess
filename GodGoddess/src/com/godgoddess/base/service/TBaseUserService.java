@@ -44,8 +44,8 @@ public class TBaseUserService {
 			e.setReg_time(new Date());
 		return tBaseUserMapper.insert(e);
 	}
-	public int selectName(){
-		return tBaseUserMapper.selectName("18759608988");
+	public int selectName(String phone){
+		return tBaseUserMapper.selectName(phone);
 	}
 	public int updateNiCAndLogo(TBaseUserEntity e){
 		e.setUpdatetime(new Date());

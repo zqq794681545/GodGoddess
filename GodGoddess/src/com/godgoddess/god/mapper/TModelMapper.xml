@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.godgoddess.god.mapper.TModelMapper
+	@Description t_model
+	@author 张秋权  zhangqq@kingtopinfo.com
+	@date 2017-05-03 10:25:05
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.god.mapper.TModelMapper">
+	
+	<select id="getCount" resultType="int" parameterType="tModelEntity">
+		select 
+			count(*)
+		from 
+			t_model
+	</select>
+	
+	<select id="selectPagination" resultType="tModelEntity" parameterType="tModelEntity">
+		select 
+			t.id,t.modelname,t.modelage,t.modelsex,t.modelbirthday,t.modelphone,t.modelheight,t.modelweight,t.modelwaist,t.modelcup,t.modelbust,t.modelhipline,t.modelavatar,t.modelemail,t.modelnickname,t.modelintroduction,t.modelcjsj,t.modelbq
+		from 
+			t_model t
+	
+	</select>
+	
+	<select id="selectByPkey" resultType="tModelEntity" parameterType="String">
+		select 
+			t.id,t.modelname,t.modelage,t.modelsex,t.modelbirthday,t.modelphone,t.modelheight,t.modelweight,t.modelwaist,t.modelcup,t.modelbust,t.modelhipline,t.modelavatar,t.modelemail,t.modelnickname,t.modelintroduction,t.modelcjsj,t.modelbq
+		from 
+			t_model t
+		where 
+			id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="tModelEntity">
+		insert into t_model(
+			id,modelname,modelage,modelsex,modelbirthday,modelphone,modelheight,modelweight,modelwaist,modelcup,modelbust,modelhipline,modelavatar,modelemail,modelnickname,modelintroduction,modelcjsj,modelbq
+		)values(
+			#{id},#{modelname},#{modelage},#{modelsex},#{modelbirthday},#{modelphone},#{modelheight},#{modelweight},#{modelwaist},#{modelcup},#{modelbust},#{modelhipline},#{modelavatar},#{modelemail},#{modelnickname},#{modelintroduction},#{modelcjsj},#{modelbq}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tModelEntity">
+		update t_model
+		set 
+			modelname = #{modelname,jdbcType=null}, modelage = #{modelage,jdbcType=null}, modelsex = #{modelsex,jdbcType=null}, modelbirthday = #{modelbirthday,jdbcType=null}, modelphone = #{modelphone,jdbcType=null}, modelheight = #{modelheight,jdbcType=null}, modelweight = #{modelweight,jdbcType=null}, modelwaist = #{modelwaist,jdbcType=null}, modelcup = #{modelcup,jdbcType=null}, modelbust = #{modelbust,jdbcType=null}, modelhipline = #{modelhipline,jdbcType=null}, modelavatar = #{modelavatar,jdbcType=null}, modelemail = #{modelemail,jdbcType=null}, modelnickname = #{modelnickname,jdbcType=null}, modelintroduction = #{modelintroduction,jdbcType=null}, modelcjsj = #{modelcjsj,jdbcType=null}, modelbq = #{modelbq,jdbcType=null}
+		where
+			id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from t_model where id = #{id}
+	</delete>
+	
+</mapper>

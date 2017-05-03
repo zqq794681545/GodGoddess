@@ -25,7 +25,7 @@ import com.godgoddess.base.entity.TBaseUserEntity;
 public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 	
 	@Autowired
-	 private Memory memory;
+	private Memory memory;
 	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request,

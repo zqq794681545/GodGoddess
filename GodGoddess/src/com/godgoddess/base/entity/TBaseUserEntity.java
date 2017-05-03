@@ -28,8 +28,15 @@ public class TBaseUserEntity implements Serializable{
 	private java.util.Date end_vip_sj;
 	private java.util.Date updatetime;
 	private String token;
+	private int acode;
 	
 	
+	public int getAcode() {
+		return acode;
+	}
+	public void setAcode(int acode) {
+		this.acode = acode;
+	}
 	public java.util.Date getUpdatetime() {
 		return updatetime;
 	}
