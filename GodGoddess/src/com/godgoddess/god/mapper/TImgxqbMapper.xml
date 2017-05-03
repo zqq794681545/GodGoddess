@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.godgoddess.god.mapper.TImgxqbMapper
+	@Description t_imgxqb
+	@author 张秋权  zhangqq@kingtopinfo.com
+	@date 2017-05-03 16:10:16
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.god.mapper.TImgxqbMapper">
+	
+	<select id="getCount" resultType="int" parameterType="tImgxqbEntity">
+		select 
+			count(*)
+		from 
+			t_imgxqb
+	</select>
+	
+	<select id="selectPagination" resultType="tImgxqbEntity" parameterType="tImgxqbEntity">
+		select 
+			t.id,t.imgname,t.imgpath,t.imgheight,t.imgweight,t.imgstate,t.imgextend,t.imgtype,t.imggroupid,t.imggxsj,t.imggxr
+		from 
+			t_imgxqb t
+	</select>
+	
+	<select id="selectByPkey" resultType="tImgxqbEntity" parameterType="String">
+		select 
+			t.id,t.imgname,t.imgpath,t.imgheight,t.imgweight,t.imgstate,t.imgextend,t.imgtype,t.imggroupid,t.imggxsj,t.imggxr
+		from 
+			t_imgxqb t
+		where 
+			id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="tImgxqbEntity">
+		insert into t_imgxqb(
+			id,imgname,imgpath,imgheight,imgweight,imgstate,imgextend,imgtype,imggroupid,imggxsj,imggxr
+		)values(
+			#{id,jdbcType=null},#{imgname,jdbcType=null},#{imgpath,jdbcType=null},#{imgheight,jdbcType=null},#{imgweight,jdbcType=null},#{imgstate,jdbcType=null},#{imgextend,jdbcType=null},#{imgtype,jdbcType=null},#{imggroupid,jdbcType=null},#{imggxsj,jdbcType=null},#{imggxr,jdbcType=null}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tImgxqbEntity">
+		update t_imgxqb
+		set 
+			imgname = #{imgname,jdbcType=null}, imgpath = #{imgpath,jdbcType=null}, imgheight = #{imgheight,jdbcType=null}, imgweight = #{imgweight,jdbcType=null}, imgstate = #{imgstate,jdbcType=null}, imgextend = #{imgextend,jdbcType=null}, imgtype = #{imgtype,jdbcType=null}, imggroupid = #{imggroupid,jdbcType=null}, imggxsj = #{imggxsj,jdbcType=null}, imggxr = #{imggxr,jdbcType=null}
+		where
+			id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from t_imgxqb where id = #{id}
+	</delete>
+	
+</mapper>
