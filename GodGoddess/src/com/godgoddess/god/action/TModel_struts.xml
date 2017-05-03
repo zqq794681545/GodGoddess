@@ -16,8 +16,8 @@
 	-->
 
 <struts>
-	<constant name="struts.multipart.maxSize" value="104857600" />
-	<package name="tModel" namespace="/tModel" extends="abstract_struts">
+
+	<package name="tModel" namespace="/tModel" extends="json-default">
 		
 		<action name="selectPagination" class="TModelAction" method="selectPagination">
 			<result name="success" type="json">

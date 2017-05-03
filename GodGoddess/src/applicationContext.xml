@@ -61,6 +61,8 @@
 	<context:component-scan base-package="
 		com.godgoddess.base.service,
 		com.godgoddess.base.action,
+		com.godgoddess.god.service,
+		com.godgoddess.god.action,
 		com.godgoddess.base.security,
 		com.godgoddess.base.util
 		" />
@@ -70,7 +72,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
 		<property name="typeAliasesPackage" value="
-			com.godgoddess.base.entity"/>
+			com.godgoddess.base.entity,com.godgoddess.god.entity"/>
 		<property name="plugins">
 			<list>
 				<ref bean="mybatisPaginationInterceptor"/>
@@ -81,7 +83,7 @@
 	<!-- 设置mybatis的mapper映射位置 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="
-			com.godgoddess.base.mapper"/>
+			com.godgoddess.base.mapper,com.godgoddess.god.mapper"/>
 	</bean>
 
 	<bean id="mybatisPaginationInterceptor" class="org.mybatis.dzb.pagination.PaginationInterceptor">

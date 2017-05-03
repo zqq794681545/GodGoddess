@@ -45,6 +45,7 @@ public class ResourceMetadataSource implements FilterInvocationSecurityMetadataS
 		ConfigAttribute ca = new SecurityConfig("base");
 		atts.add(ca);
 		resourceMap.put("/base/*", atts);
+//		resourceMap.put("../", atts);
 //		List<TBaseMenuEntity> urlList = tBaseResUrlSecurity.getAllUrl();
 //		for(int t=0; t<urlList.size(); t++){
 //			String url = urlList.get(t).getUrl();
