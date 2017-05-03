@@ -50,43 +50,16 @@
 		<div id="__add_window" class="easyui-window" data-options="title:'新增',width:350,draggable:true,shadow:true,modal:true,closed:true,closable:true,minimizable:false,maximizable:false,collapsible:false">
 			<form action="" method="post" id="__add_form">
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupid" id="__add_imggroupid" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imglj" id="__add_imglj" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgrfm" id="__add_imggroupgrfm" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgjianjie" id="__add_imgjianjie" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgxsj" id="__add_imggroupgxsj" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgjg" id="__add_imgjg" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgfmsize" id="__add_imgfmsize" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupname" id="__add_imggroupname" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgxr" id="__add_imggroupgxr" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupbt" id="__add_imggroupbt" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupsee" id="__add_imggroupsee" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupvip" id="__add_imggroupvip" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelid" id="__add_modelid" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggrouptype" id="__add_imggrouptype" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgrbs" id="__add_imggroupgrbs" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupdzrs" id="__add_imggroupdzrs" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgsfjs" id="__add_imgsfjs" />
 				</div>
 				<div style="margin-top:15px">
 					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.id" id="__add_id" />
@@ -101,43 +74,16 @@
 		<div id="__edit_window" class="easyui-window" data-options="title:'编辑',width:350,draggable:true,shadow:true,modal:true,closed:true,closable:true,minimizable:false,maximizable:false,collapsible:false">
 			<form action="" method="post" id="__edit_form">
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupid" id="__edit_imggroupid" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imglj" id="__edit_imglj" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgrfm" id="__edit_imggroupgrfm" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgjianjie" id="__edit_imgjianjie" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgxsj" id="__edit_imggroupgxsj" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgjg" id="__edit_imgjg" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgfmsize" id="__edit_imgfmsize" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupname" id="__edit_imggroupname" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgxr" id="__edit_imggroupgxr" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupbt" id="__edit_imggroupbt" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupsee" id="__edit_imggroupsee" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupvip" id="__edit_imggroupvip" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelid" id="__edit_modelid" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggrouptype" id="__edit_imggrouptype" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgrbs" id="__edit_imggroupgrbs" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupdzrs" id="__edit_imggroupdzrs" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgsfjs" id="__edit_imgsfjs" />
 				</div>
 				<div style="margin-top:15px">
 					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.id" id="__edit_id" />
@@ -152,43 +98,16 @@
 		<div id="__view_window" class="easyui-window" data-options="title:'查看',width:350,draggable:true,shadow:true,modal:true,closed:true,closable:true,minimizable:false,maximizable:false,collapsible:false">
 			<form action="" method="post" id="__view_form">
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupid" id="__view_imggroupid" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imglj" id="__view_imglj" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupgrfm" id="__view_imggroupgrfm" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imgjianjie" id="__view_imgjianjie" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupgxsj" id="__view_imggroupgxsj" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imgjg" id="__view_imgjg" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imgfmsize" id="__view_imgfmsize" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupname" id="__view_imggroupname" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupgxr" id="__view_imggroupgxr" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupbt" id="__view_imggroupbt" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupsee" id="__view_imggroupsee" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupvip" id="__view_imggroupvip" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelid" id="__view_modelid" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggrouptype" id="__view_imggrouptype" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupgrbs" id="__view_imggroupgrbs" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupdzrs" id="__view_imggroupdzrs" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imgsfjs" id="__view_imgsfjs" />
 				</div>
 				<div style="margin-top:15px">
 					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.id" id="__view_id" />

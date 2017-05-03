@@ -12,7 +12,6 @@
 	@remark create by generator
 	-->
 	<!-- copy struts.xml
-		<include file="/com/godgoddess/god/action/TImgxqb_struts.xml"></include>
 	-->
 
 <struts>

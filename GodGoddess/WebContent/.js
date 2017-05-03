@@ -1,23 +1,14 @@
 $(document).ready(function(){
 
 	$('#__table').datagrid({
-		url:'tModelImggroup/selectPagination.action',
+		url:'tImageEt/selectPagination.action',
 		queryParams:{},
 		columns:[[
 			{field:'ck',checkbox:true}//,sortable:true
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupid',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupgrfm',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupgxsj',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imgfmsize',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupname',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupgxr',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupbt',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupsee',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupvip',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelid',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggrouptype',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupgrbs',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupdzrs',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imglj',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imgjianjie',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imgjg',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imgsfjs',title:''}
 			,{hidden:false,align:'center',halign:'center',width:100,field:'id',title:''}
 		]],
 		rownumbers:true,
@@ -50,7 +41,7 @@ $(document).ready(function(){
 				handler: function(){
 					var data = $('#__table').datagrid('getSelections');
 					if(easyuiutil.uniques(data)){
-						var url = 'tModelImggroup/deletes.action' + easyuiutil.keys4del(data,'id');
+						var url = 'tImageEt/deletes.action' + easyuiutil.keys4del(data,'id');
 						$.messager.confirm('确认删除','确认删除选择的记录？',function(r){
 							if(r){
 								$.ajax({
@@ -97,7 +88,7 @@ $(document).ready(function(){
 	//增加页面保存按钮事件
 	$('#__add_save_button').click(function(){
 		$('#__add_form').form('submit',{
-			url:'tModelImggroup/insert.action',
+			url:'tImageEt/insert.action',
 			success:function(row){
 			if(row > 0){
 				$('#__add_window').window('close');
@@ -111,7 +102,7 @@ $(document).ready(function(){
 	//编辑页面保存按钮事件
 	$('#__edit_save_button').click(function(){
 		$('#__edit_form').form('submit',{
-			url:'tModelImggroup/update.action',
+			url:'tImageEt/update.action',
 			success:function(row){
 			if(row > 0){
 				$('#__edit_window').window('close');
