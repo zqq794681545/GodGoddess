@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.godgoddess.god.mapper.TModelImglbMapper
+	@Description t_model_imglb
+	@author 张秋权  zhangqq@kingtopinfo.com
+	@date 2017-05-03 14:08:56
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.god.mapper.TModelImglbMapper">
+	
+	<select id="getCount" resultType="int" parameterType="tModelImglbEntity">
+		select 
+			count(*)
+		from 
+			t_model_imglb
+	</select>
+	
+	<select id="selectPagination" resultType="tModelImglbEntity" parameterType="tModelImglbEntity">
+		select 
+			t.id,t.imggroupid,t.imggroupvalue,t.imglbfmpath,t.updatetime
+		from 
+			t_model_imglb t
+	</select>
+	
+	<select id="selectAll" resultType="tModelImglbEntity" parameterType="String">
+		select 
+			t.id,t.imggroupid,t.imggroupvalue,t.imglbfmpath,t.updatetime,t1.name as groupname
+		from 
+			t_model_imglb t,t_type t1
+		where t.imggroupid = t1.codeid
+	</select>
+	
+	<select id="selectByPkey" resultType="tModelImglbEntity" parameterType="String">
+		select 
+			t.id,t.imggroupid,t.imggroupvalue,t.imglbfmpath,t.updatetime
+		from 
+			t_model_imglb t
+		where 
+			id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="tModelImglbEntity">
+		insert into t_model_imglb(
+			id,imggroupid,imggroupvalue,imglbfmpath,updatetime
+		)values(
+			#{id},#{imggroupid},#{imggroupvalue},#{imglbfmpath},#{updatetime}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tModelImglbEntity">
+		update t_model_imglb
+		set 
+			imggroupid = #{imggroupid}, imggroupvalue = #{imggroupvalue}, imglbfmpath = #{imglbfmpath}, updatetime = #{updatetime}
+		where
+			id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from t_model_imglb where id = #{id}
+	</delete>
+	
+</mapper>

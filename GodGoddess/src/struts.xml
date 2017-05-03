@@ -17,10 +17,12 @@
 	<!-- base模块 -->
 	<include file="/com/godgoddess/base/action/TBaseUser_struts.xml"></include>
 	<include file="/com/godgoddess/base/action/TBaseFile_struts.xml"></include>
+	<include file="/com/godgoddess/base/action/TType_struts.xml"></include>
 	
 	<!-- god模块 -->
 	<include file="/com/godgoddess/god/action/TModel_struts.xml"></include>
-	
+	<include file="/com/godgoddess/god/action/TModelImglb_struts.xml"></include>
+	<include file="/com/godgoddess/god/action/TModelImggroup_struts.xml"></include>
 	
 	<!-- 拦截器 -->
 	<package name="abstract_struts" abstract="true" extends="json-default" namespace="/">

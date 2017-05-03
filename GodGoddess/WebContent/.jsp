@@ -50,55 +50,43 @@
 		<div id="__add_window" class="easyui-window" data-options="title:'新增',width:350,draggable:true,shadow:true,modal:true,closed:true,closable:true,minimizable:false,maximizable:false,collapsible:false">
 			<form action="" method="post" id="__add_form">
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelemail" id="__add_modelemail" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupid" id="__add_imggroupid" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelcjsj" id="__add_modelcjsj" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgrfm" id="__add_imggroupgrfm" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelbq" id="__add_modelbq" />
+					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgxsj" id="__add_imggroupgxsj" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelbirthday" id="__add_modelbirthday" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgfmsize" id="__add_imgfmsize" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelbust" id="__add_modelbust" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupname" id="__add_imggroupname" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelage" id="__add_modelage" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgxr" id="__add_imggroupgxr" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelheight" id="__add_modelheight" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupbt" id="__add_imggroupbt" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelavatar" id="__add_modelavatar" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupsee" id="__add_imggroupsee" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelname" id="__add_modelname" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupvip" id="__add_imggroupvip" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelcup" id="__add_modelcup" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelid" id="__add_modelid" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelweight" id="__add_modelweight" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggrouptype" id="__add_imggrouptype" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelintroduction" id="__add_modelintroduction" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgrbs" id="__add_imggroupgrbs" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelwaist" id="__add_modelwaist" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelhipline" id="__add_modelhipline" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelsex" id="__add_modelsex" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelphone" id="__add_modelphone" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelnickname" id="__add_modelnickname" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupdzrs" id="__add_imggroupdzrs" />
 				</div>
 				<div style="margin-top:15px">
 					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.id" id="__add_id" />
@@ -113,55 +101,43 @@
 		<div id="__edit_window" class="easyui-window" data-options="title:'编辑',width:350,draggable:true,shadow:true,modal:true,closed:true,closable:true,minimizable:false,maximizable:false,collapsible:false">
 			<form action="" method="post" id="__edit_form">
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelemail" id="__edit_modelemail" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupid" id="__edit_imggroupid" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelcjsj" id="__edit_modelcjsj" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgrfm" id="__edit_imggroupgrfm" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelbq" id="__edit_modelbq" />
+					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgxsj" id="__edit_imggroupgxsj" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-datebox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelbirthday" id="__edit_modelbirthday" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imgfmsize" id="__edit_imgfmsize" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelbust" id="__edit_modelbust" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupname" id="__edit_imggroupname" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelage" id="__edit_modelage" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgxr" id="__edit_imggroupgxr" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelheight" id="__edit_modelheight" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupbt" id="__edit_imggroupbt" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelavatar" id="__edit_modelavatar" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupsee" id="__edit_imggroupsee" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelname" id="__edit_modelname" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupvip" id="__edit_imggroupvip" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelcup" id="__edit_modelcup" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelid" id="__edit_modelid" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelweight" id="__edit_modelweight" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggrouptype" id="__edit_imggrouptype" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelintroduction" id="__edit_modelintroduction" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupgrbs" id="__edit_imggroupgrbs" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelwaist" id="__edit_modelwaist" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelhipline" id="__edit_modelhipline" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelsex" id="__edit_modelsex" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelphone" id="__edit_modelphone" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.modelnickname" id="__edit_modelnickname" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.imggroupdzrs" id="__edit_imggroupdzrs" />
 				</div>
 				<div style="margin-top:15px">
 					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300"  name="e.id" id="__edit_id" />
@@ -176,55 +152,43 @@
 		<div id="__view_window" class="easyui-window" data-options="title:'查看',width:350,draggable:true,shadow:true,modal:true,closed:true,closable:true,minimizable:false,maximizable:false,collapsible:false">
 			<form action="" method="post" id="__view_form">
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelemail" id="__view_modelemail" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupid" id="__view_imggroupid" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelcjsj" id="__view_modelcjsj" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupgrfm" id="__view_imggroupgrfm" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelbq" id="__view_modelbq" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupgxsj" id="__view_imggroupgxsj" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelbirthday" id="__view_modelbirthday" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imgfmsize" id="__view_imgfmsize" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelbust" id="__view_modelbust" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupname" id="__view_imggroupname" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelage" id="__view_modelage" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupgxr" id="__view_imggroupgxr" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelheight" id="__view_modelheight" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupbt" id="__view_imggroupbt" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelavatar" id="__view_modelavatar" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupsee" id="__view_imggroupsee" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelname" id="__view_modelname" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupvip" id="__view_imggroupvip" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelcup" id="__view_modelcup" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelid" id="__view_modelid" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelweight" id="__view_modelweight" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggrouptype" id="__view_imggrouptype" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelintroduction" id="__view_modelintroduction" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupgrbs" id="__view_imggroupgrbs" />
 				</div>
 				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelwaist" id="__view_modelwaist" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelhipline" id="__view_modelhipline" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelsex" id="__view_modelsex" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelphone" id="__view_modelphone" />
-				</div>
-				<div style="margin-top:15px">
-					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.modelnickname" id="__view_modelnickname" />
+					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.imggroupdzrs" id="__view_imggroupdzrs" />
 				</div>
 				<div style="margin-top:15px">
 					<input type="text" class="easyui-textbox" data-options="label:'：',required:true,labelAlign:'right',labelWidth:100,width:300,readonly:true"  name="e.id" id="__view_id" />

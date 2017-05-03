@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.godgoddess.god.mapper.TModelImggroupMapper
+	@Description t_model_imggroup
+	@author 张秋权  zhangqq@kingtopinfo.com
+	@date 2017-05-03 14:45:50
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.god.mapper.TModelImggroupMapper">
+	
+	<select id="getCount" resultType="int" parameterType="tModelImggroupEntity">
+		select 
+			count(*)
+		from 
+			t_model_imggroup
+	</select>
+	
+	<select id="selectPagination" resultType="tModelImggroupEntity" parameterType="tModelImggroupEntity">
+		select 
+			t.id,t.imggroupname,t.modelid,t.imggroupgrfm,t.imgfmsize,t.imggroupbt,t.imggrouptype,t.imggroupgrbs,t.imglbid,t.imggroupgxsj,t.imggroupgxr,t.imggroupdzrs,t.imggroupsee,t.imggroupvip
+		from 
+			t_model_imggroup t
+	</select>
+	
+	<select id="selectByPkey" resultType="tModelImggroupEntity" parameterType="String">
+		select 
+			t.id,t.imggroupname,t.modelid,t.imggroupgrfm,t.imgfmsize,t.imggroupbt,t.imggrouptype,t.imggroupgrbs,t.imglbid,t.imggroupgxsj,t.imggroupgxr,t.imggroupdzrs,t.imggroupsee,t.imggroupvip
+		from 
+			t_model_imggroup t
+		where 
+			id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="tModelImggroupEntity">
+		insert into t_model_imggroup(
+			id,imggroupname,modelid,imggroupgrfm,imgfmsize,imggroupbt,imggrouptype,imggroupgrbs,imglbid,imggroupgxsj,imggroupgxr,imggroupdzrs,imggroupsee,imggroupvip
+		)values(
+			#{id},#{imggroupname},#{modelid},#{imggroupgrfm},#{imgfmsize},#{imggroupbt},#{imggrouptype},#{imggroupgrbs},#{imglbid},#{imggroupgxsj},#{imggroupgxr},#{imggroupdzrs},#{imggroupsee},#{imggroupvip}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tModelImggroupEntity">
+		update t_model_imggroup
+		set 
+			imggroupname = #{imggroupname}, 
+			modelid = #{modelid}, 
+			imggroupgrfm = #{imggroupgrfm}, 
+			imgfmsize = #{imgfmsize}, 
+			imggroupbt = #{imggroupbt}, 
+			imggrouptype = #{imggrouptype}, 
+			imggroupgrbs = #{imggroupgrbs}, 
+			imglbid = #{imglbid}, 
+			imggroupgxsj = #{imggroupgxsj}, 
+			imggroupgxr = #{imggroupgxr}, 
+			imggroupdzrs = #{imggroupdzrs}, 
+			imggroupsee = #{imggroupsee}, 
+			imggroupvip = #{imggroupvip}
+		where
+			id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from t_model_imggroup where id = #{id}
+	</delete>
+	
+</mapper>

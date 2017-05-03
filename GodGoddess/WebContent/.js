@@ -1,27 +1,23 @@
 $(document).ready(function(){
 
 	$('#__table').datagrid({
-		url:'tModel/selectPagination.action',
+		url:'tModelImggroup/selectPagination.action',
 		queryParams:{},
 		columns:[[
 			{field:'ck',checkbox:true}//,sortable:true
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelemail',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelcjsj',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelbq',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelbirthday',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelbust',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelage',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelheight',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelavatar',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelname',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelcup',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelweight',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelintroduction',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelwaist',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelhipline',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelsex',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelphone',title:''}
-			,{hidden:false,align:'center',halign:'center',width:100,field:'modelnickname',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupid',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupgrfm',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupgxsj',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imgfmsize',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupname',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupgxr',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupbt',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupsee',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupvip',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'modelid',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggrouptype',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupgrbs',title:''}
+			,{hidden:false,align:'center',halign:'center',width:100,field:'imggroupdzrs',title:''}
 			,{hidden:false,align:'center',halign:'center',width:100,field:'id',title:''}
 		]],
 		rownumbers:true,
@@ -54,7 +50,7 @@ $(document).ready(function(){
 				handler: function(){
 					var data = $('#__table').datagrid('getSelections');
 					if(easyuiutil.uniques(data)){
-						var url = 'tModel/deletes.action' + easyuiutil.keys4del(data,'id');
+						var url = 'tModelImggroup/deletes.action' + easyuiutil.keys4del(data,'id');
 						$.messager.confirm('确认删除','确认删除选择的记录？',function(r){
 							if(r){
 								$.ajax({
@@ -101,7 +97,7 @@ $(document).ready(function(){
 	//增加页面保存按钮事件
 	$('#__add_save_button').click(function(){
 		$('#__add_form').form('submit',{
-			url:'tModel/insert.action',
+			url:'tModelImggroup/insert.action',
 			success:function(row){
 			if(row > 0){
 				$('#__add_window').window('close');
@@ -115,7 +111,7 @@ $(document).ready(function(){
 	//编辑页面保存按钮事件
 	$('#__edit_save_button').click(function(){
 		$('#__edit_form').form('submit',{
-			url:'tModel/update.action',
+			url:'tModelImggroup/update.action',
 			success:function(row){
 			if(row > 0){
 				$('#__edit_window').window('close');

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.godgoddess.base.mapper.TTypeMapper
+	@Description t_type
+	@author 张秋权  zhangqq@kingtopinfo.com
+	@date 2017-05-03 11:37:24
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.base.mapper.TTypeMapper">
+	
+	<select id="getCount" resultType="int" parameterType="tTypeEntity">
+		select 
+			count(*)
+		from 
+			t_type
+	</select>
+	
+	<select id="selectPagination" resultType="tTypeEntity" parameterType="tTypeEntity">
+		select 
+			t.id,t.value,t.name,t.codeid,t.state,t.pid,t.updatetime
+		from 
+			t_type t
+	</select>
+	
+	<select id="selectByPkey" resultType="tTypeEntity" parameterType="String">
+		select 
+			t.id,t.value,t.name,t.codeid,t.state,t.pid,t.updatetime
+		from 
+			t_type t
+		where 
+			id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="tTypeEntity">
+		insert into t_type(
+			id,value,name,codeid,state,pid,updatetime
+		)values(
+			#{id},#{value},#{name},#{codeid},#{state},#{pid},#{updatetime}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tTypeEntity">
+		update t_type
+		set 
+			value = #{value}, name = #{name}, codeid = #{codeid}, state = #{state}, pid = #{pid}, updatetime = #{updatetime}
+		where
+			id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from t_type where id = #{id}
+	</delete>
+	
+</mapper>
