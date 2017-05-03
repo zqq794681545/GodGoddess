@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!--
+	@MapperName com.godgoddess.base.mapper.TSctableMapper
+	@Description t_sctable
+	@author 张秋权  zhangqq@kingtopinfo.com
+	@date 2017-05-03 15:36:26
+	@version 1.0
+	@remark create by generator
+	-->
+	
+<mapper namespace="com.godgoddess.base.mapper.TSctableMapper">
+	
+	<select id="getCount" resultType="int" parameterType="tSctableEntity">
+		select 
+			count(*)
+		from 
+			t_sctable
+	</select>
+	
+	<select id="selectPagination" resultType="tSctableEntity" parameterType="tSctableEntity">
+		select 
+			t.id,t.userid,t.imggroupid,t.scbs,t.sctime
+		from 
+			t_sctable t
+	</select>
+	
+	<select id="selectByPkey" resultType="tSctableEntity" parameterType="String">
+		select 
+			t.id,t.userid,t.imggroupid,t.scbs,t.sctime
+		from 
+			t_sctable t
+		where 
+			id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="tSctableEntity">
+		insert into t_sctable(
+			id,userid,imggroupid,scbs,sctime
+		)values(
+			#{id,jdbcType=null},#{userid,jdbcType=null},#{imggroupid,jdbcType=null},#{scbs,jdbcType=null},#{sctime,jdbcType=null}
+		)
+	</insert>
+	
+	<update id="update" parameterType="tSctableEntity">
+		update t_sctable
+		set 
+			userid = #{userid,jdbcType=null}, imggroupid = #{imggroupid,jdbcType=null}, scbs = #{scbs,jdbcType=null}, sctime = #{sctime,jdbcType=null}
+		where
+			id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from t_sctable where id = #{id}
+	</delete>
+	
+</mapper>
