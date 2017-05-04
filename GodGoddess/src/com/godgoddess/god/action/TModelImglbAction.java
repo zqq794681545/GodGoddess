@@ -1,5 +1,6 @@
 package com.godgoddess.god.action;
 
+import com.github.pagehelper.PageHelper;
 import com.godgoddess.god.service.TModelImglbService;
 import com.godgoddess.god.entity.TModelImglbEntity;
 
@@ -18,6 +19,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.godgoddess.base.util.IntegerUtil;
+import com.godgoddess.base.util.PageBean;
 import com.godgoddess.base.util.mapUtil;
 
 /**
@@ -101,6 +103,7 @@ public class TModelImglbAction extends ActionSupport implements ServletRequestAw
 		this.sort = sort;
 	}
 	
+	
 	/**
 	 * 分页查询
 	 */
@@ -109,13 +112,16 @@ public class TModelImglbAction extends ActionSupport implements ServletRequestAw
 		e.setSort(this.sort);
 		e.setOrder(this.order);
 		this.total = tModelImglbService.getCount(e);
-		this.rows = tModelImglbService.selectPagination(e,_rows,this.page);
+		this.rows = tModelImglbService.selectPagination(e,2,this.page);
 		return SUCCESS;
 	}
 	public String selectAll(){
+		int _rows = IntegerUtil.changeString2Int(request.getParameter("rows"));
 		Map<String, Object> data = new HashMap<String, Object>();
-		data.put("total", tModelImglbService.getCount(e));
-		data.put("rows", tModelImglbService.selectAll());
+		 PageHelper.startPage(this.page,_rows);
+		 PageBean<TModelImglbEntity> page= new PageBean<TModelImglbEntity>(tModelImglbService.selectAll());;
+		data.put("total", page.getTotal());
+		data.put("rows", page.getList());
 		this.map =new mapUtil().setMaputil("200", "请求成功", data);
 
 		return SUCCESS;

@@ -14,7 +14,7 @@ import org.apache.struts2.json.annotations.JSON;
 
 public class TModelImggroupEntity extends BaseEntity{
 
-	private String imggroupid;  //
+	private String imglbid;  //
 	private String imggroupgrfm;  //
 	private java.util.Date imggroupgxsj;  //
 	private int imgfmsize;  //
@@ -29,11 +29,12 @@ public class TModelImggroupEntity extends BaseEntity{
 	private int imggroupdzrs;  //
 	private String id;  //
 	
-	public String getImggroupid(){
-		return imggroupid;
+
+	public String getImglbid() {
+		return imglbid;
 	}
-	public void setImggroupid(String imggroupid){
-		this.imggroupid = imggroupid;
+	public void setImglbid(String imglbid) {
+		this.imglbid = imglbid;
 	}
 	public String getImggroupgrfm(){
 		return imggroupgrfm;

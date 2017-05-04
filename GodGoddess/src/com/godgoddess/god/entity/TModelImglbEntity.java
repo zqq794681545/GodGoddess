@@ -20,8 +20,15 @@ public class TModelImglbEntity extends BaseEntity{
 	private String imglbfmpath;  //
 	private String id;  //
 	private String groupname;  //
+	private int imagenum;  //
 	
 	
+	public int getImagenum() {
+		return imagenum;
+	}
+	public void setImagenum(int imagenum) {
+		this.imagenum = imagenum;
+	}
 	public String getGroupname() {
 		return groupname;
 	}

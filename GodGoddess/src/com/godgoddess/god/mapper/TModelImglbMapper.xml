@@ -29,7 +29,7 @@
 	
 	<select id="selectAll" resultType="tModelImglbEntity" parameterType="String">
 		select 
-			t.id,t.imggroupid,t.imggroupvalue,t.imglbfmpath,t.updatetime,t1.name as groupname
+			t.id,t.imggroupid,t.imggroupvalue,t.imglbfmpath,t.updatetime,t1.name as groupname,(select count(*) from t_imgxqb t2 where t2.imglbid = t.id) as imagenum
 		from 
 			t_model_imglb t,t_type t1
 		where t.imggroupid = t1.codeid
