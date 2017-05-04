@@ -62,7 +62,7 @@
 			password = #{password, jdbcType=VARCHAR},
 			updatetime = #{updatetime}
 		where 
-			id = #{id}
+			phone = #{phone}
 	</update>
 	<!-- <select id="select" resultType="tBaseUserEntity">
 		select 
