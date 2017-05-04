@@ -16,6 +16,7 @@ public interface TModelImggroupMapper {
 	
 	int getCount(TModelImggroupEntity e);
 	List<TModelImggroupEntity> selectPagination(TModelImggroupEntity e,RowBounds rowBounds);
+	List<TModelImggroupEntity> selectAll(TModelImggroupEntity e);
 	TModelImggroupEntity selectByPkey(String id);
 	int insert(TModelImggroupEntity e);
 	int update(TModelImggroupEntity e);

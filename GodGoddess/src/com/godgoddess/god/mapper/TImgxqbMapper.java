@@ -15,6 +15,7 @@ import org.apache.ibatis.session.RowBounds;
 public interface TImgxqbMapper {
 	
 	int getCount(TImgxqbEntity e);
+	List<TImgxqbEntity> selectPaginas(TImgxqbEntity e);
 	List<TImgxqbEntity> selectPagination(TImgxqbEntity e,RowBounds rowBounds);
 	TImgxqbEntity selectByPkey(String id);
 	int insert(TImgxqbEntity e);

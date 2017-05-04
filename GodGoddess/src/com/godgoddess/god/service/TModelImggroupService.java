@@ -43,6 +43,9 @@ public class TModelImggroupService {
 		RowBounds rowBounds = new RowBounds(start,rows);
 		return tModelImggroupMapper.selectPagination(e,rowBounds);
 	}
+	public List<TModelImggroupEntity> selectAll(TModelImggroupEntity e){
+		return tModelImggroupMapper.selectAll(e);
+	}
 	
 	/**
 	 * 按id查询

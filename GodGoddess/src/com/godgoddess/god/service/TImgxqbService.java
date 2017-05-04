@@ -43,6 +43,9 @@ public class TImgxqbService {
 		RowBounds rowBounds = new RowBounds(start,rows);
 		return tImgxqbMapper.selectPagination(e,rowBounds);
 	}
+	public List<TImgxqbEntity> selectPaginas(TImgxqbEntity e){
+		return tImgxqbMapper.selectPaginas(e);
+	}
 	
 	/**
 	 * 按id查询

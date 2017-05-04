@@ -20,6 +20,15 @@
 			t_imgxqb
 	</select>
 	
+	<select id="selectPaginas" resultType="tImgxqbEntity" parameterType="tImgxqbEntity">
+		select 
+			t.id,t.imgname,t.imgpath,t.imgheight,t.imgweight,t.imgstate,t.imgextend,t.imgtype,t.imggroupid,t.imggxsj,t.imggxr
+		from 
+			t_imgxqb t
+			<where>
+				t.imggroupid=#{id}
+			</where>
+	</select>
 	<select id="selectPagination" resultType="tImgxqbEntity" parameterType="tImgxqbEntity">
 		select 
 			t.id,t.imgname,t.imgpath,t.imgheight,t.imgweight,t.imgstate,t.imgextend,t.imgtype,t.imggroupid,t.imggxsj,t.imggxr

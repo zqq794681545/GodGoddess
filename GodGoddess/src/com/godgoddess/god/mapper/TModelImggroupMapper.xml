@@ -26,6 +26,16 @@
 		from 
 			t_model_imggroup t
 	</select>
+	<select id="selectAll" resultType="tModelImggroupEntity" parameterType="tModelImggroupEntity">
+		select 
+			t.id,t.imggroupname,t.modelid,t.imggroupgrfm,t.imgfmsize,t.imggroupbt,t.imggrouptype,t.imggroupgrbs,t.imglbid,t.imggroupgxsj,t.imggroupgxr,t.imggroupdzrs,t.imggroupsee,t.imggroupvip
+		from 
+			t_model_imggroup t
+		<where>
+			t.imglbid = #{id}
+		</where>
+		
+	</select>
 	
 	<select id="selectByPkey" resultType="tModelImggroupEntity" parameterType="String">
 		select 

@@ -1,17 +1,27 @@
 package com.godgoddess.god.action;
 
+import com.github.pagehelper.PageHelper;
 import com.godgoddess.god.service.TImgxqbService;
 import com.godgoddess.god.entity.TImgxqbEntity;
+import com.godgoddess.god.entity.TModelImggroupEntity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.struts2.interceptor.ServletRequestAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.godgoddess.base.util.IntegerUtil;
+import com.godgoddess.base.util.PageBean;
+import com.godgoddess.base.util.mapUtil;
 
 /**
  * @ClassName com.godgoddess.god.action.TImgxqbAction
@@ -32,6 +42,7 @@ public class TImgxqbAction extends ActionSupport implements ServletRequestAware 
 	private TImgxqbService tImgxqbService;
 	
 	private List<TImgxqbEntity> rows = new ArrayList<TImgxqbEntity>();
+	private Map<String, Object> map = new HashMap<String, Object>(); 
 	private TImgxqbEntity e = new TImgxqbEntity();
 	private String[] keys;
 	private int row = 0;
@@ -40,6 +51,13 @@ public class TImgxqbAction extends ActionSupport implements ServletRequestAware 
 	private String order;
 	private String sort;
 	
+	
+	public Map<String, Object> getMap() {
+		return map;
+	}
+	public void setMap(Map<String, Object> map) {
+		this.map = map;
+	}
 	public List<TImgxqbEntity> getRows() {
 		return rows;
 	}
@@ -95,6 +113,16 @@ public class TImgxqbAction extends ActionSupport implements ServletRequestAware 
 		e.setOrder(this.order);
 		this.total = tImgxqbService.getCount(e);
 		this.rows = tImgxqbService.selectPagination(e,_rows,this.page);
+		return SUCCESS;
+	}
+	public String selectPaginas(){
+		Map<String, Object> data = new HashMap<String, Object>();
+		int _rows = IntegerUtil.changeString2Int(request.getParameter("rows"));
+		PageHelper.startPage(this.page,_rows);
+		PageBean<TImgxqbEntity> page= new PageBean<TImgxqbEntity>(tImgxqbService.selectPaginas(this.e));;
+		data.put("total", page.getTotal());
+		data.put("rows", page.getList());
+		this.map =new mapUtil().setMaputil("200", "请求成功", data);
 		return SUCCESS;
 	}
 	
